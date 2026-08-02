@@ -10,6 +10,10 @@ between a real result and a silent zero.
   results regardless of browser. Treat any "no results" from these as
   unproven, not as "no deals."
 
+Entries marked **verified** were tested with a real browser on 2026-08-02.
+Unmarked entries are still estimates and should be confirmed before the
+routine depends on them.
+
 Every domain listed here must also be in the cloud environment's **Allowed
 domains** list, or the request dies with `403 host_not_allowed`.
 
@@ -19,9 +23,9 @@ domains** list, or the request dies with `403 host_not_allowed`.
 
 | Site | Domain | Access | Notes |
 |---|---|---|---|
-| Amazon | amazon.com | Hostile | Widest selection, worst to scrape. Best reached via price-history sites below. |
-| Best Buy | bestbuy.com | Playwright | Open-box deals are often the real bargain; listed separately from new. |
-| B&H Photo | bhphotovideo.com | Playwright | Good monitor pricing. Payboo/instant-rebate prices differ from list. |
+| Amazon | amazon.com | **Hostile — verified blocked** | Returned HTTP 503 from a residential IP with a real browser (2026-08-02). Do not scrape directly; reach via price-history sites below. |
+| Best Buy | bestbuy.com | **Playwright — verified working** | Prices at `[data-testid="price-block-customer-price"]`. Open-box deals are often the real bargain. |
+| B&H Photo | bhphotovideo.com | **Playwright — verified working** | Prices extract cleanly; product-title selector still needs pinning down. Payboo/instant-rebate prices differ from list. |
 | Newegg | newegg.com | Playwright | Strong on monitors, weak on phones. Watch third-party marketplace sellers. |
 | Walmart | walmart.com | Hostile | Heavy bot protection. Marketplace sellers muddy results. |
 | Target | target.com | Playwright | Thin selection for both categories. |
