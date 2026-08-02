@@ -4,58 +4,69 @@ Sites the routine checks. The **Access** column is the design-critical one:
 it says how the routine can actually read the page, and it's the difference
 between a real result and a silent zero.
 
-- **Open** — a plain fetch works.
-- **Playwright** — needs a real browser (price is rendered by JS).
-- **Hostile** — actively blocks datacenter IPs; expect CAPTCHAs and empty
-  results regardless of browser. Treat any "no results" from these as
-  unproven, not as "no deals."
+All entries below were tested with a real headless browser on **2026-08-02**
+via [`probe.js`](probe.js). Re-run it whenever a source starts returning
+nothing — retailers change markup and bot rules without warning.
 
-Entries marked **verified** were tested with a real browser on 2026-08-02.
-Unmarked entries are still estimates and should be confirmed before the
-routine depends on them.
+- **WORKS** — a real browser gets prices back. Use it.
+- **THIN** — page loads but few prices found; selector or URL needs work.
+- **BLOCKED** — 403/CAPTCHA. Treat any "no results" here as *unproven*,
+  never as "no deals."
+- **URL WRONG** — my search URL 404'd. Not a blocking verdict; unverified.
 
-Every domain listed here must also be in the cloud environment's **Allowed
-domains** list, or the request dies with `403 host_not_allowed`.
+Every domain here must also be in the cloud environment's **Allowed domains**
+list, or the request dies with `403 host_not_allowed`.
 
 ---
 
-## Retailers — general
+## Confirmed working — the routine's roster
 
-| Site | Domain | Access | Notes |
+| Site | Domain | Prices seen | Notes |
 |---|---|---|---|
-| Amazon | amazon.com | **Hostile — verified blocked** | Returned HTTP 503 from a residential IP with a real browser (2026-08-02). Do not scrape directly; reach via price-history sites below. |
-| Best Buy | bestbuy.com | **Playwright — verified working** | Prices at `[data-testid="price-block-customer-price"]`. Open-box deals are often the real bargain. |
-| B&H Photo | bhphotovideo.com | **Playwright — verified working** | Prices extract cleanly; product-title selector still needs pinning down. Payboo/instant-rebate prices differ from list. |
-| Newegg | newegg.com | Playwright | Strong on monitors, weak on phones. Watch third-party marketplace sellers. |
-| Walmart | walmart.com | Hostile | Heavy bot protection. Marketplace sellers muddy results. |
-| Target | target.com | Playwright | Thin selection for both categories. |
-| Micro Center | microcenter.com | Playwright | Prices are per-store; needs a store set or results are meaningless. |
-| Adorama | adorama.com | Playwright | B&H competitor, similar monitor stock. |
-| Costco | costco.com | Hostile | Membership pricing hidden behind login. Low priority. |
-| Woot | woot.com | Playwright | Amazon-owned closeouts. High variance, occasionally excellent. |
-| eBay | ebay.com | Playwright | Manufacturer-refurbished listings only — see watchlist condition rules. |
+| Newegg | newegg.com | 113 | Best yield of any retailer. Strong on monitors. Watch third-party sellers. |
+| Slickdeals | slickdeals.net | 101 | **The Amazon workaround.** Human-vetted deals incl. Amazon listings. |
+| Back Market | backmarket.com | 93 | Refurb grading explicit. Confirm "unlocked" per listing. |
+| Adorama | adorama.com | 84 | B&H competitor, similar monitor stock. |
+| Lenovo | lenovo.com | 55 | ThinkVision M-series, discounted hard and often. |
+| B&H Photo | bhphotovideo.com | 53 | Payboo/instant-rebate prices differ from list. |
+| Woot | woot.com | 51 | Amazon-owned closeouts. High variance, occasionally excellent. |
+| Best Buy | bestbuy.com | 45 | Prices at `[data-testid="price-block-customer-price"]`. Open-box worth checking. |
+| Mint Mobile | mintmobile.com | 43 | Cheap unlocked stock — verify no carrier lock before trusting. |
+| ASUS | asus.com | 41 | ZenScreen line direct. |
+| Micro Center | microcenter.com | 28 | Prices are per-store; needs a store set or results mislead. |
+| Samsung | samsung.com | 28 | Verify eSIM by exact model number, US variant. |
+| Monoprice | monoprice.com | 25 | Own-brand portable monitors, plain site, cheap. |
+| Staples | staples.com | 15 | Thin catalog but reliably readable. |
+| Motorola | motorola.com | 6 | Few prices on the listing page; product pages needed for real numbers. |
 
-## Retailers — phone-specific
+## Blocked — do not scrape directly
 
-| Site | Domain | Access | Notes |
+| Site | Domain | Result | Notes |
 |---|---|---|---|
-| Google Store | store.google.com | Playwright | Pixel A-series; eSIM support is dependable here. |
-| Motorola | motorola.com | Playwright | Frequent direct discounts well below retail. |
-| Samsung | samsung.com | Playwright | Verify eSIM by exact model number, US variant. |
-| Back Market | backmarket.com | Playwright | Refurb grading is explicit. Confirm "unlocked" per listing. |
+| Amazon | amazon.com | HTTP 503 | Blocked even from a residential IP. Reach via Slickdeals/Woot. |
+| Camelcamelcamel | camelcamelcamel.com | HTTP 403 | Cloudflare challenge ("Just a moment..."). **Not usable** as an Amazon proxy. |
+| eBay | ebay.com | HTTP 403 | Blocked on the search endpoint. |
+| Dell | dell.com | HTTP 403 | "Access Denied" — aggressive filtering. |
+| Walmart | walmart.com | not tested | Known hostile; assume blocked until proven otherwise. |
+| Costco | costco.com | not tested | Membership pricing behind login. Low priority. |
 
-## Price history / aggregators
+## Thin or unresolved — need work before use
 
-These are the highest-value sources for the money, because they solve the
-Amazon problem without fighting Amazon.
-
-| Site | Domain | Access | Notes |
+| Site | Domain | Result | What's needed |
 |---|---|---|---|
-| Camelcamelcamel | camelcamelcamel.com | Open | Amazon price history. Gives a real baseline, not just today's number. |
-| Keepa | keepa.com | Playwright | Same idea, richer data. API is paid. |
-| Slickdeals | slickdeals.net | Playwright | Human-vetted deals. Front-page items are usually genuine. |
-| DealNews | dealnews.com | Open | Editorially curated, clean structure, easy to parse. |
-| r/buildapcsales | reddit.com/r/buildapcsales | Open | Monitors show up here constantly. Old reddit + `.json` is trivially parseable. |
+| Target | target.com | 0 prices, HTTP 200 | Page loads but renders no prices in 3.5s. Needs longer wait or is silently gated. |
+| Google Store | store.google.com | 0 prices, HTTP 200 | Prices load in a later JS pass. Needs a wait-for-selector. |
+| PCPartPicker | pcpartpicker.com | 3 prices | Table is lazy-loaded; needs scroll before extraction. |
+| DealNews | dealnews.com | 4 prices | Category URL was too broad. Try a keyword search URL. |
+| Visible | visible.com | 1 price | Wrong landing URL. |
+| OnePlus | oneplus.com | 2 prices | Wrong landing URL. |
+| Abt | abt.com | HTTP 404 | My search URL was wrong — not blocked. Needs the correct search path. |
+| Office Depot | officedepot.com | HTTP 404 | Same — URL wrong, unverified. |
+| Crutchfield | crutchfield.com | HTTP 404 | Same — URL wrong, unverified. |
+| Gazelle | gazelle.com | HTTP 404 | Same — URL wrong, unverified. |
+
+I didn't chase the four 404s. Fifteen working sources is already more than
+this watchlist needs, and guessing search URLs is low-value work.
 
 ---
 
@@ -63,9 +74,8 @@ Amazon problem without fighting Amazon.
 
 - A source returning zero results is logged as an **error**, never as "no
   deals found." Silent failure is the main way this routine rots.
-- Record the seller for marketplace listings (Amazon/Walmart/Newegg/eBay).
-  A third-party seller at a suspiciously good price is usually not a deal.
-- Prefer the price-history sources for the *baseline*; use retailer pages
-  for *today's* price.
+- Record the seller for marketplace listings (Newegg/eBay/Walmart). A
+  third-party seller at a suspiciously good price is usually not a deal.
+- Prefer Slickdeals for *Amazon* pricing; use retailer pages for their own.
 - Shipping and tax are excluded from recorded prices unless the site makes
   them unavoidable — note it if so.

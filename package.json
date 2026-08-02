@@ -1,0 +1,23 @@
+{
+  "name": "deal-watch",
+  "version": "1.0.0",
+  "description": "A weekly Claude Code cloud routine that scans for deals on the products in [`watchlist.md`](watchlist.md) across the sites in [`sources.md`](sources.md), and drafts an email when something genuinely good turns up.",
+  "main": "probe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpm0112/deal-watch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpm0112/deal-watch/issues"
+  },
+  "homepage": "https://github.com/jpm0112/deal-watch#readme",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}
