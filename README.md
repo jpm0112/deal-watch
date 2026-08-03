@@ -40,14 +40,19 @@ a site that blocked the scraper must never be recorded as "no deals found."
 
 ## Alert rule
 
-An item is a hit if **either**:
+There are no target prices. A listing is a hit on **relative** evidence:
 
-- price ≤ its target price in `watchlist.md`, or
-- price is ≥15% below the item's baseline (median of its recorded prices)
+- **Longitudinal** — ≥15% below that product's own median recorded price.
+- **Cross-sectional** — clearly under the going rate for other listings in
+  the same run that meet the same must-have specs.
 
-## Caveat on the baseline
+The price cap in `watchlist.md` is a relevance filter, not a goal. Being
+under the cap is never itself a reason to alert.
 
-The routine runs weekly, so the baseline accumulates ~52 observations a year.
-For roughly the first month, "15% below baseline" has too little history to
-mean much, and hits will effectively come from the target price alone. This
-is expected; the rule sharpens as the log fills.
+## Why cross-sectional matters early
+
+The routine runs weekly, so a product's own history accumulates ~52 points a
+year. For roughly the first month the longitudinal rule has too little data
+to fire, and every real hit will come from the cross-sectional comparison.
+That ordering is expected — the longitudinal rule sharpens as the log fills,
+and eventually becomes the better of the two.

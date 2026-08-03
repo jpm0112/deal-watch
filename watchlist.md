@@ -1,18 +1,34 @@
 # Deal watchlist
 
 One `##` section per item. The routine reads this file, searches for matching
-products, and records prices in `prices.json`.
+products, and records prices in `prices.jsonl`.
 
 Keep `id` stable — it's the key used in the price log. Everything under
 **Must have** is a hard filter; **Nice to have** only breaks ties.
+
+## How "good deal" is decided
+
+There are **no target prices**. The job is to find a good deal, not to wait
+for a number I made up. A deal qualifies on *relative* evidence:
+
+1. **Below its own history** — 15%+ under that product's median recorded
+   price. Needs history, so this sharpens as `prices.jsonl` fills.
+2. **Below the going rate** — meaningfully cheaper than other listings that
+   meet the same **Must have** specs in the same run. This works from the
+   very first run, and early on it's the rule that will actually fire.
+
+`Price cap` is a **relevance filter only** — it excludes products that
+aren't what I'm shopping for. Never search toward the cap, and never treat
+"under the cap" as a deal. A $520 monitor is not a find.
 
 ---
 
 ## hotspot-phone
 
 **Category:** Smartphone (primary use: mobile hotspot / tethering)
-**Target price:** $150 <!-- my guess — correct this -->
-**Alert if:** at or under target price, OR 15%+ below its tracked baseline
+**Price cap:** $600 — relevance filter, not a goal. Ignore anything above it.
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+phones meeting the same must-haves
 **Status:** active
 
 **Must have**
@@ -48,8 +64,9 @@ confirmed against the specific model number, not the product family.
 ## portable-monitor
 
 **Category:** Portable external monitor
-**Target price:** $130 <!-- my guess — correct this -->
-**Alert if:** at or under target price, OR 15%+ below its tracked baseline
+**Price cap:** $600 — relevance filter, not a goal. Ignore anything above it.
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+monitors meeting the same must-haves
 **Status:** active
 
 **Must have**
