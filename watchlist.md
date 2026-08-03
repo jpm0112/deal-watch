@@ -6,6 +6,11 @@ products, and records prices in `prices.jsonl`.
 Keep `id` stable — it's the key used in the price log. Everything under
 **Must have** is a hard filter; **Nice to have** only breaks ties.
 
+`scrape.js` machine-reads four lines per item — keep their format exactly:
+`**Price cap:** $N`, `**Min price:** $N`, `**Search queries:** a; b; c`
+(semicolon-separated), `**Match keywords:** a; b; c` (any-of title filter).
+Everything else in a section is for the reviewing agent, not the scraper.
+
 ## How "good deal" is decided
 
 There are **no target prices**. The job is to find a good deal, not to wait
@@ -27,6 +32,9 @@ aren't what I'm shopping for. Never search toward the cap, and never treat
 
 **Category:** Smartphone (primary use: mobile hotspot / tethering)
 **Price cap:** $600 — relevance filter, not a goal. Ignore anything above it.
+**Min price:** $80 — below this it's a case, cable, or junk, not a phone.
+**Search queries:** unlocked 5g phone esim; moto g 5g unlocked; pixel 9a unlocked
+**Match keywords:** phone; smartphone; galaxy; pixel; moto; oneplus; 5g
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 phones meeting the same must-haves
 **Status:** active
@@ -65,6 +73,9 @@ confirmed against the specific model number, not the product family.
 
 **Category:** Portable external monitor
 **Price cap:** $600 — relevance filter, not a goal. Ignore anything above it.
+**Min price:** $50 — below this it's a stand, cable, or sleeve, not a panel.
+**Search queries:** portable monitor 16 inch; portable monitor 18 inch usb-c
+**Match keywords:** monitor; display; screen extender
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 monitors meeting the same must-haves
 **Status:** active

@@ -8,19 +8,24 @@ and drafts an email when something genuinely good turns up.
 
 | File | Role |
 |---|---|
-| `watchlist.md` | What to look for. Specs, target prices, alert rules. Edit this. |
-| `sources.md` | Where to look. Includes how each site has to be accessed. |
+| `watchlist.md` | What to look for. Specs, caps, search queries. Edit this. |
+| `sources.md` | Where to look, and how each site behaves when scraped. |
+| `scrape.js` | Collects observations. Mechanical: gathers, never judges. |
+| `probe.js` | One-off source viability tester. Re-run when a site goes quiet. |
 | `prices.jsonl` | Append-only observation log. Never edited, never pruned. |
-| `DEALS.md` | Human-readable findings, newest first. |
+| `DEALS.md` | Human-readable verified findings, newest first. |
+| `routine-prompt.md` | The instructions pasted into the cloud routine. |
 
 ## How a run works
 
-1. Read `watchlist.md` and `sources.md`.
-2. Search each source for products matching the **Must have** specs.
-3. Append every observation to `prices.jsonl` — one JSON object per line.
-4. Compare against the item's target price and its tracked baseline.
-5. Write any hits to the top of `DEALS.md`.
-6. Commit and push.
+1. `node scrape.js` — reads `watchlist.md`, scrapes the verified sources,
+   appends every observation *and every failure* to `prices.jsonl`.
+2. The agent applies the relative deal rules (below) to this run's data.
+3. Every candidate is **verified on its own product page** before it counts:
+   real price, must-have specs, seller, condition, stock. The scraper's wide
+   net catches discount badges and accessories; verification throws them back.
+4. Verified hits are prepended to `DEALS.md`.
+5. Commit and push.
 
 The routine uses **no connectors** and sends nothing. `DEALS.md` and the
 commit history are the only output. Notification is handled separately.
@@ -45,8 +50,8 @@ a site that blocked the scraper must never be recorded as "no deals found."
 There are no target prices. A listing is a hit on **relative** evidence:
 
 - **Longitudinal** — ≥15% below that product's own median recorded price.
-- **Cross-sectional** — clearly under the going rate for other listings in
-  the same run that meet the same must-have specs.
+- **Cross-sectional** — ≥20% below the median price of comparable listings
+  in the same run that meet the same must-have specs.
 
 The price cap in `watchlist.md` is a relevance filter, not a goal. Being
 under the cap is never itself a reason to alert.

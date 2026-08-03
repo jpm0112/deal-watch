@@ -8,28 +8,22 @@ re-paste, so the file and the live routine don't drift apart.
 
 ---
 
-You are the deal-watch routine. The repo github.com/jpm0112/deal-watch is cloned in your working directory. It is self-describing — read it first and follow it exactly.
+You are the deal-watch routine. The repo github.com/jpm0112/deal-watch is cloned in your working directory. It is self-describing — read README.md, watchlist.md, and sources.md first and follow them exactly.
 
-1. Read README.md, watchlist.md, and sources.md. They define what to look for, where to look, and what counts as a deal.
+1. Setup: if node_modules is missing, run `npm install` then `npx playwright install chromium`.
 
-2. Setup: if node_modules is missing, run `npm install` then `npx playwright install chromium`.
+2. Run `node scrape.js`. It reads watchlist.md, scrapes the verified sources, and appends every observation and every error to prices.jsonl itself. Read its stdout summary. Do not re-scrape sites it already covered; only investigate ones that errored, and never scrape sites listed as Blocked in sources.md — they return 403/503 and waste the run.
 
-3. For each item in watchlist.md with Status: active, search the sources listed under "Confirmed working" in sources.md. Use Playwright — probe.js contains a working browser-launch and price-extraction pattern; reuse it. Do NOT scrape any site listed under "Blocked"; they return 403/503 and wasting a run on them is worse than skipping.
+3. prices.jsonl is APPEND-ONLY. Never rewrite, reorder, or delete existing lines. If you add observations manually (e.g. from a product page you verified), append them in the same JSON format used by scrape.js.
 
-4. Record EVERY observation as one JSON object appended as a single line to prices.jsonl:
+4. Find candidate deals in this run's observations using the rules in README.md. They are RELATIVE only: (a) 15%+ below that product's own median across all of prices.jsonl, or (b) 20%+ below the median price of comparable listings in this same run meeting the same must-have specs. There are NO target prices. The $600 price cap in watchlist.md is a relevance filter — never search toward it, and never treat "under the cap" as a deal.
 
-{"ts":"<ISO8601>","item":"<watchlist id>","source":"<site>","seller":"<first-party or third-party name>","title":"...","url":"<full link>","price":<number>,"currency":"USD","condition":"new|open-box|refurbished","in_stock":true}
+5. The scraper is a wide net and its data is noisy: some captured "prices" are discount badges ("Save $50"), bundle prices, or accessories. VERIFY every candidate before calling it a hit — open its product URL with Playwright and confirm the real current price, the must-have specs from watchlist.md, seller, condition, and stock. A candidate whose page contradicts the scraped price is noise; discard it silently.
 
-This file is APPEND-ONLY. Never rewrite, reorder, or delete existing lines.
+6. For each verified hit, PREPEND an entry to DEALS.md using the commented template at the bottom of that file. Include the full URL, retailer, seller, condition, stock, why it qualified (which rule, with the numbers), which specs you confirmed on the page, and which you could not. Never delete past entries.
 
-5. If a source errors, blocks, or returns zero prices, append a line with "error":"<what happened>" INSTEAD of "price". Never record a failed source as "no deals found" — silent failure is the main way this routine rots.
+7. Commit and push prices.jsonl and DEALS.md to main with the message "Weekly scan <YYYY-MM-DD>". If the push to main is rejected, push to a claude/ branch instead and say so in your final output.
 
-6. Apply the deal rules in README.md. They are RELATIVE only: (a) 15%+ below that product's own median in prices.jsonl, or (b) clearly under the going rate for other listings in this same run meeting the same must-have specs. There are NO target prices. The $600 price cap in watchlist.md is a relevance filter — never search toward it, and never treat "under the cap" as a deal.
+8. Do not send email or use any connector. Findings live in DEALS.md and the commit history — that is the only output channel. Notification is handled separately, outside this routine.
 
-7. For each hit, PREPEND an entry to DEALS.md using the commented template at the bottom of that file. Include the full URL, retailer, seller, condition, stock, why it qualified, which specs you confirmed, and which you could not. Never delete past entries.
-
-8. Commit and push prices.jsonl and DEALS.md to main with the message "Weekly scan <YYYY-MM-DD>".
-
-9. Do not send email or use any connector. Findings live in DEALS.md and the commit history — that is the only output channel. Notification is handled separately, outside this routine.
-
-10. If Playwright cannot launch, or every source errors, still commit the error lines and state clearly in your final output that the run failed and why. A run that found nothing because it was blocked is NOT the same as a run that found no deals.
+9. If scrape.js exits non-zero, Playwright cannot launch, or every source errors, still commit the error lines and state clearly in your final output that the run FAILED and why. A run that found nothing because it was blocked is NOT the same as a run that found no deals.

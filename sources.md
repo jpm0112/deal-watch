@@ -68,6 +68,24 @@ list, or the request dies with `403 host_not_allowed`.
 I didn't chase the four 404s. Fifteen working sources is already more than
 this watchlist needs, and guessing search URLs is low-value work.
 
+## scrape.js behavior notes (2026-08-02, local test runs)
+
+- **Back Market** — intermittent Cloudflare ("Just a moment"). Worked in the
+  first probe, blocked in later runs. Expect flakiness; error lines are normal.
+- **B&H, Micro Center** — occasionally Cloudflare-challenge one query then
+  serve the rest. Repeated same-site requests in one run trigger it.
+- **Adorama** — loads (HTTP 200) but the generic extractor gets nothing;
+  likely shadow-DOM or iframe pricing. Parked.
+- **Best Buy** — serves a facet-only skeleton until the page is scrolled;
+  scrape.js scrolls for this reason. Its "$25 – $49.99" facet labels look
+  like prices; the min-price filter absorbs most of them.
+- **Known noise**: "Save $50"-style badges get captured as prices. This is
+  why every candidate deal must be verified on its product page before it
+  reaches DEALS.md.
+- Yield varies run to run (anti-bot serving is nondeterministic). A site
+  yielding 0 in one run and 25 in the next is normal; only a site erroring
+  consistently across weeks needs attention.
+
 ---
 
 ## Rules
