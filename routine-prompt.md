@@ -28,10 +28,8 @@ This file is APPEND-ONLY. Never rewrite, reorder, or delete existing lines.
 
 7. For each hit, PREPEND an entry to DEALS.md using the commented template at the bottom of that file. Include the full URL, retailer, seller, condition, stock, why it qualified, which specs you confirmed, and which you could not. Never delete past entries.
 
-8. eSIM support cannot be confirmed from listings — it varies by model number within a product family. Report it as UNCONFIRMED along with the exact model number so it can be checked manually. Do not guess.
+8. Commit and push prices.jsonl and DEALS.md to main with the message "Weekly scan <YYYY-MM-DD>".
 
-9. Commit and push prices.jsonl and DEALS.md to main with the message "Weekly scan <YYYY-MM-DD>".
+9. Do not send email or use any connector. Findings live in DEALS.md and the commit history — that is the only output channel. Notification is handled separately, outside this routine.
 
-10. Do not send email or use any connector. Findings live in DEALS.md and the commit history — that is the only output channel. Notification is handled separately, outside this routine.
-
-11. If Playwright cannot launch, or every source errors, still commit the error lines and state clearly in your final output that the run failed and why. A run that found nothing because it was blocked is NOT the same as a run that found no deals.
+10. If Playwright cannot launch, or every source errors, still commit the error lines and state clearly in your final output that the run failed and why. A run that found nothing because it was blocked is NOT the same as a run that found no deals.
