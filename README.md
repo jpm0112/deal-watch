@@ -20,8 +20,10 @@ and drafts an email when something genuinely good turns up.
 3. Append every observation to `prices.jsonl` — one JSON object per line.
 4. Compare against the item's target price and its tracked baseline.
 5. Write any hits to the top of `DEALS.md`.
-6. Draft a Gmail summary **only if** there was a hit.
-7. Commit and push.
+6. Commit and push.
+
+The routine uses **no connectors** and sends nothing. `DEALS.md` and the
+commit history are the only output. Notification is handled separately.
 
 ## The price log
 
