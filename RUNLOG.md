@@ -5,3 +5,4 @@ still leaves a trace — an empty week here means the routine did not run at
 all, which is different from a week with no deals.
 
 - 2026-08-03T14:12:26Z — scheduled run fired but pushed nothing; cause unknown (no transcript captured). Preflight steps added in response.
+- 2026-08-04T01:32:55Z - run started
