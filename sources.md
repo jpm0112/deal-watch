@@ -38,6 +38,10 @@ list, or the request dies with `403 host_not_allowed`.
 | Monoprice | monoprice.com | 25 | Own-brand portable monitors, plain site, cheap. |
 | Staples | staples.com | 15 | Thin catalog but reliably readable. |
 | Target | target.com | 42 | Verified 2026-08-04 with scrape.js behavior — needs the scroll (probe.js's static look saw 0). Refurb-heavy results; watch condition. |
+| Visible | visible.com | 46 | Verified 2026-08-04, `/shop/smartphones`. Carrier — **verify unlocked/no plan lock per listing** before trusting, same caveat as Mint Mobile. |
+| Office Depot | officedepot.com | 34 | Verified 2026-08-04, search is `catalog/search.do?Ntt=`. Real titles (ViewSonic portable monitors seen). |
+| Acer Store | store.acer.com | 21 | Verified 2026-08-04. Nitro PG1 portable line direct. Fixed page (baked search URL). |
+| Arzopa | arzopa.com | 19 | Verified 2026-08-04, `/collections/portable-monitors`. Brand watchlist names directly; frequent discounts. |
 | Motorola | motorola.com | 6 | Few prices on the listing page; product pages needed for real numbers. |
 
 ## Blocked — do not scrape directly
@@ -48,7 +52,7 @@ list, or the request dies with `403 host_not_allowed`.
 | Camelcamelcamel | camelcamelcamel.com | HTTP 403 | Cloudflare challenge ("Just a moment..."). **Not usable** as an Amazon proxy. |
 | eBay | ebay.com | HTTP 403 | Blocked on the search endpoint. |
 | Dell | dell.com | HTTP 403 | "Access Denied" — aggressive filtering. |
-| Walmart | walmart.com | not tested | Known hostile; assume blocked until proven otherwise. |
+| Walmart | walmart.com | extractor crash | Tested 2026-08-04: page DOM crashed the generic extractor mid-walk. Known hostile; parked. |
 | Costco | costco.com | not tested | Membership pricing behind login. Low priority. |
 
 ## Thin or unresolved — need work before use
@@ -58,15 +62,26 @@ list, or the request dies with `403 host_not_allowed`.
 | Google Store | store.google.com | 0 prices, HTTP 200 | Re-tested 2026-08-04 with scroll + 10s wait: still 0 — the generic extractor gets nothing from its markup. Parked. |
 | PCPartPicker | pcpartpicker.com | 3 prices | Lazy table, but it's a *desktop* monitor category — its prices would pollute the portable-monitor cross-sectional median. Deliberately excluded. |
 | DealNews | dealnews.com | 1 junk price | Real search endpoint found (2026-08-04): `dealnews.com/search.html?search=<q>` — but it returns pagination chrome, not deals. Parked. |
-| Visible | visible.com | 1 price | Wrong landing URL. |
-| OnePlus | oneplus.com | 2 prices | Wrong landing URL. |
-| Abt | abt.com | HTTP 404 | My search URL was wrong — not blocked. Needs the correct search path. |
-| Office Depot | officedepot.com | HTTP 404 | Same — URL wrong, unverified. |
-| Crutchfield | crutchfield.com | HTTP 404 | Same — URL wrong, unverified. |
-| Gazelle | gazelle.com | HTTP 404 | Same — URL wrong, unverified. |
+| Crutchfield | crutchfield.com | 40 prices, junk titles | 2026-08-04: `shopsearch/<q>.html` loads fine, but the star-rating link is the *only* qualifying link in the card ancestry (longest-link variant A/B'd: identical junk). Product title isn't reachable by the generic walk — needs a real per-site selector. |
+| OnePlus | oneplus.com | HTTP 404 | `/us/store/phone` and `/us/store/smartphones` both 404. Correct store path still unknown. |
+| Abt | abt.com | HTTP 404 | Two search-URL guesses 404'd (2026-08-02, 2026-08-04). Correct search path still unknown. |
 
-I didn't chase the four 404s. Fifteen working sources is already more than
-this watchlist needs, and guessing search URLs is low-value work.
+## Untested backlog — ideas, in rough priority order
+
+Candidates not yet probed, or excluded on watchlist grounds. Probe with
+scrape.js behavior (scroll included) before promoting — probe.js's static
+look undercounts (Target proved this).
+
+| Site | Why it might help | Why it's still here |
+|---|---|---|
+| UPERFECT (uperfect.com) | Portable-monitor specialist, direct discounts | `/collections/portable-monitor` 404'd; find the right collection URL |
+| INNOCN (innocn.com) | Watchlist names it as a candidate brand | Same — collection URL guess 404'd |
+| ViewSonic (viewsonic.com) | VX16 series on the watchlist | Mostly sells via retailers; direct store unverified |
+| Sam's Club (samsclub.com) | Occasional sharp monitor/phone deals | Membership pricing may be gated like Costco |
+| HP (hp.com) | Sells some portable displays | Catalog likely thin for this watchlist |
+| Dell Outlet (dell.com/outlet) | Refurb monitors cheap | dell.com blocked the main probe; outlet subdomain untested |
+| Gazelle / Swappa | Cheap used phones | **Excluded**: third-party used violates the watchlist must-have (new or manufacturer-refurb only) |
+| Costco (costco.com) | Member prices are genuinely good | Pricing behind login; low priority |
 
 ## scrape.js behavior notes (2026-08-02, local test runs)
 

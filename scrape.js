@@ -40,6 +40,7 @@ const SEARCH = {
   monoprice:   q => `https://www.monoprice.com/search/index?keyword=${enc(q)}`,
   slickdeals:  q => `https://slickdeals.net/newsearch.php?q=${enc(q)}`,
   target:      q => `https://www.target.com/s?searchTerm=${enc(q)}`,
+  officedepot: q => `https://www.officedepot.com/catalog/search.do?Ntt=${enc(q)}`,
   backmarket:  q => `https://www.backmarket.com/en-us/search?q=${enc(q)}`,
   staples:     q => `https://www.staples.com/${q.replace(/ /g, '+')}/directory_${q.replace(/ /g, '+')}`,
 };
@@ -50,6 +51,10 @@ const FIXED = {
   samsung:    'https://www.samsung.com/us/smartphones/all-smartphones/',
   motorola:   'https://www.motorola.com/us/smartphones-all/c/all-smartphones',
   mintmobile: 'https://www.mintmobile.com/devices/',
+  arzopa:     'https://www.arzopa.com/collections/portable-monitors',
+  // search URL baked in: monitor-only vendor, keeps phone queries off it
+  acerstore:  'https://store.acer.com/en-us/catalogsearch/result/?q=portable+monitor',
+  visible:    'https://www.visible.com/shop/smartphones',
 };
 
 // --- extraction -------------------------------------------------------------
