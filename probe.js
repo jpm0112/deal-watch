@@ -9,6 +9,8 @@ const SITES = [
   ['B&H Photo',     'https://www.bhphotovideo.com/c/search?q=portable%20monitor%2016%20inch'],
   ['Newegg',        'https://www.newegg.com/p/pl?d=portable+monitor+16+inch'],
   ['Target',        'https://www.target.com/s?searchTerm=portable+monitor'],
+  ['Arzopa',        'https://www.arzopa.com/collections/portable-monitors'],
+  ['Acer Store',    'https://store.acer.com/en-us/catalogsearch/result/?q=portable+monitor'],
   ['Micro Center',  'https://www.microcenter.com/search/search_results.aspx?Ntt=portable+monitor'],
   ['Adorama',       'https://www.adorama.com/l/?searchinfo=portable%20monitor'],
   ['Woot',          'https://electronics.woot.com/'],
@@ -19,19 +21,19 @@ const SITES = [
   ['ASUS',          'https://www.asus.com/us/displays-desktops/monitors/zenscreen/filter?Series=ZenScreen'],
   ['Abt',           'https://www.abt.com/search?q=portable+monitor'],
   ['Staples',       'https://www.staples.com/portable+monitor/directory_portable+monitor'],
-  ['Office Depot',  'https://www.officedepot.com/a/search/portable%20monitor/'],
-  ['Crutchfield',   'https://www.crutchfield.com/search/portable+monitor.html'],
+  ['Office Depot',  'https://www.officedepot.com/catalog/search.do?Ntt=portable%20monitor'],
+  ['Crutchfield',   'https://www.crutchfield.com/shopsearch/portable+monitor.html'],
   ['PCPartPicker',  'https://pcpartpicker.com/products/monitor/'],
   ['Back Market',   'https://www.backmarket.com/en-us/search?q=unlocked%205g%20phone'],
   ['Google Store',  'https://store.google.com/us/category/phones'],
   ['Motorola',      'https://www.motorola.com/us/smartphones-all/c/all-smartphones'],
   ['Samsung',       'https://www.samsung.com/us/smartphones/all-smartphones/'],
   ['Mint Mobile',   'https://www.mintmobile.com/devices/'],
-  ['Visible',       'https://www.visible.com/phones'],
+  ['Visible',       'https://www.visible.com/shop/smartphones'],
   ['OnePlus',       'https://www.oneplus.com/us/store/phone'],
   ['Gazelle',       'https://www.gazelle.com/shop/cell-phones'],
   ['Slickdeals',    'https://slickdeals.net/newsearch.php?q=portable+monitor'],
-  ['DealNews',      'https://www.dealnews.com/c142/Computers/Monitors/'],
+  ['DealNews',      'https://www.dealnews.com/search.html?search=portable+monitor'],
   ['Camelcamelcamel','https://camelcamelcamel.com/search?sq=portable+monitor'],
 ];
 
@@ -46,7 +48,10 @@ async function probe(browser, [name, url]) {
   try {
     const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
     const status = resp ? resp.status() : 0;
-    await page.waitForTimeout(3500); // let JS render prices
+    // Match scrape.js behavior: a static look undercounts — Target probed as
+    // "0 prices" for two days until a scrolled probe found 42 listings.
+    await page.waitForTimeout(2000);
+    for (let i = 0; i < 4; i++) { await page.mouse.wheel(0, 1200); await page.waitForTimeout(1500); }
     const text = await page.evaluate(() => document.body.innerText || '');
     const title = await page.title();
     const prices = text.match(PRICE) || [];

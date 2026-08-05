@@ -62,7 +62,7 @@ list, or the request dies with `403 host_not_allowed`.
 | Google Store | store.google.com | 0 prices, HTTP 200 | Re-tested 2026-08-04 with scroll + 10s wait: still 0 — the generic extractor gets nothing from its markup. Parked. |
 | PCPartPicker | pcpartpicker.com | 3 prices | Lazy table, but it's a *desktop* monitor category — its prices would pollute the portable-monitor cross-sectional median. Deliberately excluded. |
 | DealNews | dealnews.com | 1 junk price | Real search endpoint found (2026-08-04): `dealnews.com/search.html?search=<q>` — but it returns pagination chrome, not deals. Parked. |
-| Crutchfield | crutchfield.com | 40 prices, junk titles | 2026-08-04: `shopsearch/<q>.html` loads fine, but the generic extractor takes the star-rating link as the title, so keyword matching kills every listing. Needs a per-site selector. |
+| Crutchfield | crutchfield.com | 40 prices, junk titles | 2026-08-04: `shopsearch/<q>.html` loads fine, but the star-rating link is the *only* qualifying link in the card ancestry (longest-link variant A/B'd: identical junk). Product title isn't reachable by the generic walk — needs a real per-site selector. |
 | OnePlus | oneplus.com | HTTP 404 | `/us/store/phone` and `/us/store/smartphones` both 404. Correct store path still unknown. |
 | Abt | abt.com | HTTP 404 | Two search-URL guesses 404'd (2026-08-02, 2026-08-04). Correct search path still unknown. |
 
