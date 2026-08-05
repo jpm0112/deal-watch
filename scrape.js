@@ -126,7 +126,18 @@ async function fetchListings(browser, url) {
     tasks.push({ site, url, item: null }); // matched against all items by keyword
 
   // ponytail: PW_CHROME reuses a local browser when builds mismatch; unset in cloud.
-  const browser = await chromium.launch({ executablePath: process.env.PW_CHROME || undefined });
+  // Cloud sandbox routes all egress through a local HTTPS_PROXY; Chromium doesn't
+  // read that env var itself, so it's passed explicitly. TLS is capped at 1.2
+  // because this proxy's path resets the connection on Chromium's TLS 1.3
+  // ClientHello (oversized by the post-quantum X25519Kyber768 key share) —
+  // confirmed via --log-net-log: CONNECT succeeds, then the raw socket gets
+  // RST (net_error -101) right after ClientHello, every time, every domain.
+  const proxyServer = process.env.HTTPS_PROXY || process.env.https_proxy;
+  const browser = await chromium.launch({
+    executablePath: process.env.PW_CHROME || undefined,
+    proxy: proxyServer ? { server: proxyServer } : undefined,
+    args: ['--ssl-version-max=tls1.2'],
+  });
   const lines = [], summary = {};
   const ts = new Date().toISOString();
 
