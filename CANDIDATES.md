@@ -15,5 +15,7 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-08-05 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 14.3% below this run's clean median (need 20%) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
+| 2026-08-05 | `portable-monitor` | ViewSonic VX1654 16" 144Hz Portable FreeSync Gaming Monitor | $169.99 | staples | 10.5% below this run's clean median (need 20%); this is the item's normal price, back up from the $149.99 promo verified 2026-08-04 | https://www.staples.com/viewsonic-16-144-hz-lcd-gaming-monitor-vx1654/product_24616303 |
 
-_No candidates recorded yet._
+_Prior runs (2026-08-04, 2026-08-05 x2) recorded no candidates — every apparent near-miss traced to noise (expired posts, carrier locks, off-spec panels)._
