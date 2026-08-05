@@ -140,6 +140,7 @@ async function fetchListings(browser, url) {
   });
   const lines = [], summary = {};
   const ts = new Date().toISOString();
+  const logged = new Set(); // overlapping queries surface the same listing; log it once per run
 
   for (let i = 0; i < tasks.length; i += 4) {                 // 4-wide, gentle on rate limits
     await Promise.all(tasks.slice(i, i + 4).map(async t => {
@@ -155,6 +156,9 @@ async function fetchListings(browser, url) {
       for (const it of targets)
         for (const l of res.listings)
           if (it.keywords.test(l.title) && l.price >= it.min && l.price <= it.cap) {
+            const key = `${it.id}|${l.url}|${l.price}`;
+            if (logged.has(key)) continue;
+            logged.add(key);
             lines.push({ ts, item: it.id, source: t.site, seller: null, title: l.title.slice(0, 120),
                          url: l.url, price: l.price, currency: 'USD', condition: null, in_stock: null });
             kept++;
@@ -165,7 +169,7 @@ async function fetchListings(browser, url) {
   }
   await browser.close();
 
-  fs.appendFileSync(`${__dirname}/prices.jsonl`, lines.map(l => JSON.stringify(l)).join('\n') + '\n');
+  if (lines.length) fs.appendFileSync(`${__dirname}/prices.jsonl`, lines.map(l => JSON.stringify(l)).join('\n') + '\n');
 
   const obs = lines.filter(l => 'price' in l).length, errs = lines.filter(l => l.error).length;
   console.log(`Appended ${lines.length} lines to prices.jsonl: ${obs} observations, ${errs} error records.`);

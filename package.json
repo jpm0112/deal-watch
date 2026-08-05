@@ -1,7 +1,7 @@
 {
   "name": "deal-watch",
   "version": "1.0.0",
-  "description": "A weekly Claude Code cloud routine that scans for deals on the products in [`watchlist.md`](watchlist.md) across the sites in [`sources.md`](sources.md), and drafts an email when something genuinely good turns up.",
+  "description": "Weekly Claude Code cloud routine that scans watchlist products across verified sources and records verified deals in DEALS.md.",
   "main": "probe.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

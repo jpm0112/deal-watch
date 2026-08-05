@@ -2,7 +2,8 @@
 
 A weekly Claude Code cloud routine that scans for deals on the products in
 [`watchlist.md`](watchlist.md) across the sites in [`sources.md`](sources.md),
-and drafts an email when something genuinely good turns up.
+and records verified hits in [`DEALS.md`](DEALS.md) when something genuinely
+good turns up.
 
 ## Files
 
@@ -49,7 +50,9 @@ a site that blocked the scraper must never be recorded as "no deals found."
 
 There are no target prices. A listing is a hit on **relative** evidence:
 
-- **Longitudinal** — ≥15% below that product's own median recorded price.
+- **Longitudinal** — ≥15% below that specific model's own median recorded
+  price (matched by URL/title, not the watchlist item — an item-wide median
+  mixes cheap and premium products and means nothing).
 - **Cross-sectional** — ≥20% below the median price of comparable listings
   in the same run that meet the same must-have specs.
 
