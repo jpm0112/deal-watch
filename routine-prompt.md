@@ -27,7 +27,9 @@ STEP 2 — BROWSER PREFLIGHT. Run `node -e "require('playwright').chromium.launc
 
 7. For each verified hit, PREPEND an entry to DEALS.md using the commented template at the bottom of that file. Include the full URL, retailer, seller, condition, stock, why it qualified (which rule, with the numbers), which specs you confirmed on the page, and which you could not. Never delete past entries.
 
-8. Append a closing line to RUNLOG.md summarizing the run: sources that worked, sources that errored, observation count, and hit count. Commit prices.jsonl, DEALS.md, and RUNLOG.md with the message "Weekly scan <YYYY-MM-DD>" and push. Use the same branch that succeeded in STEP 1.
+7b. NEAR-MISSES: listings that were 10%+ below the relevant median but did not clear the 15%/20% bars go to CANDIDATES.md — prepend one table row each (template in that file), at most the 5 closest per run. Do NOT verify these on their product pages; they are cheap breadcrumbs, not calls to action. Never delete past rows.
+
+8. Append a closing line to RUNLOG.md summarizing the run: sources that worked, sources that errored, observation count, and hit count. Commit prices.jsonl, DEALS.md, CANDIDATES.md, and RUNLOG.md with the message "Weekly scan <YYYY-MM-DD>" and push. Use the same branch that succeeded in STEP 1.
 
 9. Do not send email or use any connector. Findings live in DEALS.md, RUNLOG.md, and the commit history — that is the only output channel. Notification is handled separately, outside this routine.
 

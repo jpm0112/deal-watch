@@ -39,6 +39,7 @@ const SEARCH = {
   adorama:     q => `https://www.adorama.com/l/?searchinfo=${enc(q)}`,
   monoprice:   q => `https://www.monoprice.com/search/index?keyword=${enc(q)}`,
   slickdeals:  q => `https://slickdeals.net/newsearch.php?q=${enc(q)}`,
+  target:      q => `https://www.target.com/s?searchTerm=${enc(q)}`,
   backmarket:  q => `https://www.backmarket.com/en-us/search?q=${enc(q)}`,
   staples:     q => `https://www.staples.com/${q.replace(/ /g, '+')}/directory_${q.replace(/ /g, '+')}`,
 };

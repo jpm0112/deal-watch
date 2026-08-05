@@ -15,6 +15,7 @@ good turns up.
 | `probe.js` | One-off source viability tester. Re-run when a site goes quiet. |
 | `prices.jsonl` | Append-only observation log. Never edited, never pruned. |
 | `DEALS.md` | Human-readable verified findings, newest first. |
+| `CANDIDATES.md` | Near-misses (10%+ below a median, under the bar). Unverified breadcrumbs. |
 | `routine-prompt.md` | The instructions pasted into the cloud routine. |
 
 ## How a run works
@@ -25,7 +26,8 @@ good turns up.
 3. Every candidate is **verified on its own product page** before it counts:
    real price, must-have specs, seller, condition, stock. The scraper's wide
    net catches discount badges and accessories; verification throws them back.
-4. Verified hits are prepended to `DEALS.md`.
+4. Verified hits are prepended to `DEALS.md`; near-misses (close to a bar
+   but under it) get one unverified row each in `CANDIDATES.md`.
 5. Commit and push.
 
 The routine uses **no connectors** and sends nothing. `DEALS.md` and the

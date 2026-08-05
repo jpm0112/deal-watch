@@ -37,6 +37,7 @@ list, or the request dies with `403 host_not_allowed`.
 | Samsung | samsung.com | 28 | Verify eSIM by exact model number, US variant. |
 | Monoprice | monoprice.com | 25 | Own-brand portable monitors, plain site, cheap. |
 | Staples | staples.com | 15 | Thin catalog but reliably readable. |
+| Target | target.com | 42 | Verified 2026-08-04 with scrape.js behavior — needs the scroll (probe.js's static look saw 0). Refurb-heavy results; watch condition. |
 | Motorola | motorola.com | 6 | Few prices on the listing page; product pages needed for real numbers. |
 
 ## Blocked — do not scrape directly
@@ -54,10 +55,9 @@ list, or the request dies with `403 host_not_allowed`.
 
 | Site | Domain | Result | What's needed |
 |---|---|---|---|
-| Target | target.com | 0 prices, HTTP 200 | Page loads but renders no prices in 3.5s. Needs longer wait or is silently gated. |
-| Google Store | store.google.com | 0 prices, HTTP 200 | Prices load in a later JS pass. Needs a wait-for-selector. |
-| PCPartPicker | pcpartpicker.com | 3 prices | Table is lazy-loaded; needs scroll before extraction. |
-| DealNews | dealnews.com | 4 prices | Category URL was too broad. Try a keyword search URL. |
+| Google Store | store.google.com | 0 prices, HTTP 200 | Re-tested 2026-08-04 with scroll + 10s wait: still 0 — the generic extractor gets nothing from its markup. Parked. |
+| PCPartPicker | pcpartpicker.com | 3 prices | Lazy table, but it's a *desktop* monitor category — its prices would pollute the portable-monitor cross-sectional median. Deliberately excluded. |
+| DealNews | dealnews.com | 1 junk price | Real search endpoint found (2026-08-04): `dealnews.com/search.html?search=<q>` — but it returns pagination chrome, not deals. Parked. |
 | Visible | visible.com | 1 price | Wrong landing URL. |
 | OnePlus | oneplus.com | 2 prices | Wrong landing URL. |
 | Abt | abt.com | HTTP 404 | My search URL was wrong — not blocked. Needs the correct search path. |
