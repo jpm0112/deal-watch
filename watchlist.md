@@ -115,3 +115,78 @@ good deal over it.
 
 **Condition:** new or open-box, including Best Buy open-box and
 manufacturer-refurbished. No third-party used listings.
+
+---
+
+## iphone-14-pro
+
+**Category:** Smartphone (Apple iPhone 14 Pro, discontinued — mostly a refurb market)
+**Price cap:** $650 — relevance filter, not a goal. Ignore anything above it.
+**Min price:** $150 — below this it's a case, screen protector, or scam listing.
+**Search queries:** iphone 14 pro unlocked; iphone 14 pro refurbished unlocked
+**Match keywords:** iphone 14 pro
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+listings meeting the same must-haves
+**Status:** active
+
+**Must have**
+
+- iPhone 14 Pro exactly — not 14, not 14 Plus, not 14 Pro Max
+- Unlocked (carrier-free, no financing lock)
+- 128 GB or larger
+- New, open-box, or manufacturer/Apple-certified refurbished — no
+  third-party used listings
+
+**Nice to have**
+
+- 256 GB at a 128 GB-tier price
+- Battery health stated at 90%+ (refurb listings that disclose it)
+- Full accessory kit / original box
+
+**Notes**
+
+Discontinued September 2023, so new-in-box units are rare and command a
+premium; expect most qualifying listings to be certified refurbished
+(Apple Certified Refurbished, Best Buy Geek Squad, Amazon Renewed Premium).
+"Renewed" grades below Premium/Excellent count as third-party used — skip.
+Verify the listing says **Pro**, not Pro Max — titles blur them constantly,
+and a Pro Max price mixed into the Pro pool poisons the cross-sectional
+median.
+
+---
+
+## playstation-5
+
+**Category:** Game console (any PS5 model that runs GTA 6 — all of them do)
+**Price cap:** $800 — relevance filter, not a goal. Ignore anything above it.
+**Min price:** $250 — below this it's a controller, headset, or gift card.
+**Search queries:** playstation 5 console; ps5 slim console; ps5 pro console
+**Match keywords:** playstation 5; ps5
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+the same model tier
+**Status:** active
+
+**Must have**
+
+- A PS5 console — Slim Disc, Slim Digital, or PS5 Pro all qualify
+  (GTA 6 is confirmed on every PS5 model; PS4 is not supported)
+- Sold as the console, not a controller/accessory/gift-card listing
+- New, open-box, or Sony/retailer-certified refurbished — no
+  third-party used listings
+
+**Nice to have**
+
+- Disc drive (Slim Disc, or Pro bundled with the add-on drive) — keeps
+  the used-game option open
+- 1 TB or larger storage — GTA 6 is estimated at 150–250 GB, tight on
+  the 825 GB Digital Edition
+- Game bundle at the bare-console price
+
+**Notes**
+
+Compare within model tiers, never across them: list prices differ by
+hundreds (Digital ≈ $449, Slim Disc ≈ $549, Pro ≈ $749 after the 2025
+hike), so a Digital at its normal price looks like a "deal" against a
+Pro median. Match the tier from the title before pooling. Bundles are
+fine but note the bundle contents — a bundle's price isn't comparable
+to a bare console's.
