@@ -40,6 +40,74 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-07 — Motorola Moto G Stylus 5G (2024), 256GB, Unlocked (Caramel Latte)
+
+| | |
+|---|---|
+| **Item** | `hotspot-phone` |
+| **Price** | $199.99 USD |
+| **Was** | $349.00 (this run's clean cross-sectional median, n=106 comparable listings) |
+| **Drop** | 42.7% below this run's going rate (no own-history baseline yet — first observation of this URL) |
+| **Why it hit** | 20%+ below going rate (cross-sectional) |
+| **Retailer** | Best Buy |
+| **Seller** | Best Buy (first-party) |
+| **Condition** | new |
+| **Stock** | in stock for pickup ("Pick up today"; "Shipping unavailable" at time of check) |
+| **Link** | https://www.bestbuy.com/product/motorola-moto-g-stylus-5g-2024-256gb-unlocked-caramel-latte/J39QWY66FW/sku/6578951 |
+
+**Specs matched**
+
+- Unlocked: confirmed — Best Buy lists it under "No Contract/Unlocked > Unlocked" and in the title
+- eSIM capable: confirmed via Motorola's own spec page (motorola.com) — "SIM Card: Dual SIM (1 Nano SIM + eSIM)"
+- 5G: confirmed — model name and Motorola product page both state 5G
+- Mobile hotspot: not disabled — standard unlocked retail SKU, no carrier-lock bundle
+- Condition: new retail listing (no open-box/refurb tag on the Best Buy listing)
+
+**Spec gaps / unconfirmed**
+
+- Battery capacity (5000 mAh+ nice-to-have) not independently confirmed this run
+- USB-C PD passthrough not independently confirmed this run
+
+**Notes**
+
+Surfaced via a Slickdeals post pointing at a Best Buy listing scraped at $189.99; that Slickdeals post was still live (not expired) but Best Buy's own live search this run showed the current real price as $199.99 ("Top Deal," "Save $200," comparable value $399.99) — used the live-verified number, not the stale scraped one. The Best Buy product page itself would not load directly through the proxy (net::ERR_HTTP2_PROTOCOL_ERROR on repeated attempts, both via Playwright and curl) — price/stock/title/seller were confirmed instead from Best Buy's live search results page, and specs from Motorola's own product page. Motorola.com sells the same configuration directly at an even lower $179.99, but that listing showed "Currently Out of Stock" at check time, so it isn't cited as the buyable link. "Shipping unavailable" on the Best Buy listing means local pickup only — worth confirming stock at a nearby store before treating this as guaranteed available.
+
+---
+
+## 2026-08-07 — UPERFECT 16" 2K QHD Portable Monitor (2560x1600, VESA Mount)
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $149.99 USD |
+| **Was** | $200.00 (this run's clean cross-sectional median, n=73 comparable listings) |
+| **Drop** | 25.0% below this run's going rate (no own-history baseline yet — first accurate observation of this URL) |
+| **Why it hit** | 20%+ below going rate (cross-sectional) |
+| **Retailer** | Newegg |
+| **Seller** | Uperfect (Newegg-hosted brand store, "Hot Seller," 4.7★/121 ratings), shipped by Uperfect |
+| **Condition** | new |
+| **Stock** | in stock ("Add to cart" live, free shipping, delivery in 3 days) |
+| **Link** | https://www.newegg.com/p/2NY-008V-000T9 |
+
+**Specs matched**
+
+- Panel size: 16" — meets the 16"–18" must-have
+- HDMI input: confirmed (full-size HDMI per listing copy)
+- USB-C video input: confirmed — "USB-C 3.1 (video + data)," DP Alt Mode, compatible with laptops/MacBooks/Android/Switch/PS4/PS5
+- Stand/cover: confirmed — magnetic protective cover doubling as an adjustable stand, included
+- Portability: 1.48 lbs — backpack-sleeve friendly
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not stated on the listing
+- No "was/reg" discount badge shown on the product page itself — this is the item's listed price, not a temporary markdown; it qualifies on being genuinely cheaper than this run's comparable-listing median, not on a price cut
+
+**Notes**
+
+scrape.js had logged this URL at $119.99, but that price belongs to a different, unrelated *sponsored* product card (a "KurieTim 21.5\" Monitor") that renders on the same page — a new extraction-contamination pattern, distinct from the previously-documented was/now duplicate-price artifact. The real product's price, read directly from the page's price element, is $149.99. Used the verified $149.99, not the scraped $119.99; it still clears the cross-sectional bar (25.0%) at the correct price. Worth a scrape.js fix: the generic extractor should stay within the main product's card boundary and not wander into a nearby sponsored widget.
+
+---
+
 ## 2026-08-04 — UPERFECT 16" Portable Monitor 2K 144HZ HDR FreeSync (M160C01W)
 
 | | |
