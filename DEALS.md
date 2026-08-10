@@ -40,6 +40,41 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-10 — Arzopa Z1C 16.1" FHD 100% sRGB Portable Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $89.99 USD |
+| **Was** | $189.99 (this run's clean cross-sectional median, n=43 comparable 16"–18.5" listings) |
+| **Drop** | 52.6% below this run's going rate (no useful own-history baseline — every prior observation of this URL is the same $89.99, so 0% longitudinal drop) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("Availability: In Stock") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/z1c-16-1-100-srgb-fhd-1080p-portable-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI — confirmed ("Input Interface: Mini HD(Video Signal)"; box includes a Mini HDMI-to-HDMI cable)
+- USB-C video input: confirmed — "Type-C Full Function (Video Data, Power Supply)"
+- Stand/cover: built-in kickstand confirmed ("no bulky covers needed"); no separate cover bundled
+- Portability: listed as lightweight/thin, single USB-C cable for one-cable operation
+
+**Spec gaps / unconfirmed**
+
+- No case/cover included (kickstand only) — a mild negative per watchlist notes, not a disqualifier
+- Matte/anti-glare finish not stated
+- Refresh rate 60Hz (basic panel, not gaming-tier — still meets all stated must-haves)
+
+**Notes**
+
+Page shows "$89.99 $159.99 SAVE 44%" with no stated end date. scrape.js logged this same URL at both $89.99 and $159.99 in every run since 2026-08-05 (list price vs. sale price captured as two separate rows) — live page confirms $89.99 is the real, current, standing price, not a badge artifact. Because it's been steady at $89.99 for 5+ days, this is more "persistently good" than "just dropped," but it still clears the cross-sectional bar on its own merits and has not been recorded in DEALS.md before.
+
+---
+
 ## 2026-08-07 — Motorola Moto G Stylus 5G (2024), 256GB, Unlocked (Caramel Latte)
 
 | | |
