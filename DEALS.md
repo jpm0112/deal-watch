@@ -40,6 +40,40 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-12 — Arzopa Z1FC Gray 16.1" 144Hz Portable Monitor with Sleeve Bag
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $109.99 USD |
+| **Was** | $185.49 (this run's clean cross-sectional median, n=42 comparable 16"–18" listings, explicit size stated, docks/mounts/extenders excluded) |
+| **Drop** | 40.7% below this run's going rate (no useful own-history baseline — page shows a permanent-looking "$209.99 $109.99 SAVE 48%" flash-sale display with a rolling countdown timer on every visit since first logged 2026-08-05, same non-independent-anchor pattern documented since 2026-08-06) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("In Stock — Estimated delivery in 2-4 business days") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/arzopa-z1fc-gray-144hz-portable-gaming-monitor-16-1-screen |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI confirmed ("Interface: TYPE-C(USB 3.1)*2...miniHDMI(2.0)*1")
+- USB-C video input: confirmed, 2x full-function Type-C with DP output
+- Stand/cover: built-in stand plus included protective sleeve bag ("Portable Monitor + Sleeve Bag")
+- Single-cable USB-C operation: yes (full-function Type-C carries video + power)
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not stated
+- 144Hz, 1080p — meets all stated must-haves, above the 1080p "nice to have" bar
+
+**Notes**
+
+Distinct SKU/URL from the plain "Arzopa Z1FC 16.1" 144Hz" already in this file (2026-08-11, $129.99) — this is the Gray colorway bundled with a sleeve bag, priced lower. Same "permanent flash sale" display pattern as Arzopa's other listed models (was verified but discarded as noise on 2026-08-06, before this run's tighter clean cross-sectional set existed); today it independently clears the cross-sectional bar the same way Z1C, A1M, Z1RC, and the plain Z1FC did. Not previously recorded in DEALS.md.
+
+---
+
 ## 2026-08-11 — Arzopa A1M 17.3" Large 1080p Portable Monitor
 
 | | |
