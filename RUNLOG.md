@@ -82,3 +82,4 @@ all, which is different from a week with no deals.
   iphone-14-pro (n=19 raw, n=11 clean after excluding Pro Max/carrier-locked/eBay-third-party — clean median $366): no longitudinal candidates (0 URLs with 3+ history points clearing 15%). No cross-sectional candidates clearing 20%. Two near-misses (10-20%) logged to CANDIDATES.md.
 
   CANDIDATES.md: 5 new rows (max per run) — hotspot-phone Moto G Power 5G 2025/Slickdeals (14.0%, part of the same confirmed-expired repost cluster as every prior run), playstation-5 digital $374/Slickdeals (16.9%), playstation-5 disc $380/Slickdeals (19.1%), playstation-5 pro $629/Slickdeals (10.1%), iphone-14-pro $326.99 Good-purple/Slickdeals (10.7%).
+- 2026-08-12T14:21:11Z — run started
