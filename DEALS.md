@@ -41,6 +41,42 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-14 — Arzopa Z3FC 16.1" 2.5K 180Hz Portable Gaming Monitor FreeSync
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $139.99 USD |
+| **Was** | $145.99 — this listing's own prior daily low (`node baseline.js z3fc`) |
+| **History** | $145.99 on 2026-08-05 through 2026-08-11 (5 days flat) → $139.99 on 2026-08-14 (verdict: MOVED) |
+| **Drop** | 4.1% below its own prior low (under the 15% longitudinal bar) / 22.7% below this run's $180.99 clean cross-sectional median (16"–18.5" portable monitors, n=38, accessories/screen-extenders/docking-stations/desktop tiers excluded) |
+| **Why it hit** | 20%+ below comparables (cross-sectional) |
+| **Retailer** | arzopa.com (direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/arzopa-z3fc-16-1-180hz-2560x1440-qhd-portable-gaming-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI — confirmed on the product page
+- USB-C video input: USB-C (DP Alt Mode) — confirmed
+- Stand/cover: integrated stand + protective sleeve — confirmed
+- Portability: 16.1" panel, sleeve included — backpack-sleeve friendly
+- Panel: 2.5K (2560x1440) 180Hz — above the "1080p or better" nice-to-have
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not explicitly stated on the listing
+- Battery/no-battery status not confirmed (bus-powered assumed, not stated outright)
+
+**Notes**
+
+This is the only listing in this run's 524-listing dataset whose price both cleared a deal bar (cross-sectional here, 22.7%) and passed the movement gate (`node baseline.js`): it sat flat at $145.99 across 5 prior runs (2026-08-05 through 2026-08-11), then genuinely dropped to $139.99 this run — real movement, not a permanent was/now badge (the price is a single live value on the page, `og:price:amount` = 139.99, no reference-price text). Every sibling Arzopa listing (Z1C, A1M, Z1RC, one Z1FC variant) also clears the 20% cross-sectional bar this run but was excluded as FLAT — same price every day seen since logging began, so no evidence the number is anything but this item's permanent price tag; per the movement-gate policy added 2026-08-11, FLAT never qualifies regardless of the cross-sectional gap. Verified live via direct HTTP fetch (Playwright hit `net::ERR_CONNECTION_RESET` on arzopa.com product pages through this proxy, same known issue documented in the 2026-08-06 RUNLOG entry) — page confirms price, stock, and specs above.
+
+---
+
 ## 2026-08-11 — Arzopa A1M 17.3" Large 1080p Portable Monitor
 
 | | |
