@@ -65,10 +65,14 @@ const FIXED = {
 
 const EXTRACT = () => {
   const priceRe = /\$\s?\d[\d,]*(?:\.\d{2})?/;          // contained, not exact —
+  // Reference prices, not what the listing charges: "Save $50", "20% off",
+  // "Reg. $199.99", "was $159.99". Logging these as observations is what makes
+  // a permanently-discounted listing look like it keeps dropping.
+  const refRe = /\b(save|off|was|reg|list|msrp|coupon|rebate|discount)\b|%/i;
   const out = [], seen = new Set();                      // sites pad price nodes
   for (const el of document.querySelectorAll('body *')) {
     const t = (el.innerText || '').trim();
-    if (el.children.length || t.length > 25 || !priceRe.test(t)) continue;
+    if (el.children.length || t.length > 25 || !priceRe.test(t) || refRe.test(t)) continue;
     // Walk up until the card contains a link with real title-length text —
     // on retail cards the product title IS the link text. Short links
     // ("Add to cart", financing offers) don't qualify, so keep climbing.
@@ -144,9 +148,13 @@ async function fetchListings(browser, url) {
     proxy: proxyServer ? { server: proxyServer } : undefined,
     args: ['--ssl-version-max=tls1.2'],
   });
-  const lines = [], summary = {};
+  const errors = [], summary = {};
   const ts = new Date().toISOString();
-  const logged = new Set(); // overlapping queries surface the same listing; log it once per run
+  // One observation per listing per run, at the LOWEST price it showed.
+  // Overlapping queries surface the same listing repeatedly, and a card with a
+  // strikethrough beside the real price yields both numbers — only the lower
+  // one is ever charged, and keeping both invents a drop that never happened.
+  const best = new Map(); // `${item}|${url}` -> observation
 
   for (let i = 0; i < tasks.length; i += 4) {                 // 4-wide, gentle on rate limits
     await Promise.all(tasks.slice(i, i + 4).map(async t => {
@@ -154,7 +162,7 @@ async function fetchListings(browser, url) {
       const targets = t.item ? [t.item] : items;
       if (res.error) {
         for (const it of targets)
-          lines.push({ ts, item: it.id, source: t.site, url: t.url, error: res.error });
+          errors.push({ ts, item: it.id, source: t.site, url: t.url, error: res.error });
         summary[t.site] = summary[t.site] || `ERROR: ${res.error}`;
         return;
       }
@@ -162,12 +170,12 @@ async function fetchListings(browser, url) {
       for (const it of targets)
         for (const l of res.listings)
           if (it.keywords.test(l.title) && l.price >= it.min && l.price <= it.cap) {
-            const key = `${it.id}|${l.url}|${l.price}`;
-            if (logged.has(key)) continue;
-            logged.add(key);
-            lines.push({ ts, item: it.id, source: t.site, seller: null, title: l.title.slice(0, 120),
-                         url: l.url, price: l.price, currency: 'USD', condition: null, in_stock: null });
-            kept++;
+            const key = `${it.id}|${l.url}`;
+            const prev = best.get(key);
+            if (prev && prev.price <= l.price) continue;
+            if (!prev) kept++;
+            best.set(key, { ts, item: it.id, source: t.site, seller: null, title: l.title.slice(0, 120),
+                            url: l.url, price: l.price, currency: 'USD', condition: null, in_stock: null });
           }
       summary[t.site] = `${(summary[t.site] || '').startsWith('ERROR') ? summary[t.site] + '; then ' : ''}ok`;
       summary[t.site + '_kept'] = (summary[t.site + '_kept'] || 0) + kept;
@@ -175,6 +183,7 @@ async function fetchListings(browser, url) {
   }
   await browser.close();
 
+  const lines = [...errors, ...best.values()];
   if (lines.length) fs.appendFileSync(`${__dirname}/prices.jsonl`, lines.map(l => JSON.stringify(l)).join('\n') + '\n');
 
   const obs = lines.filter(l => 'price' in l).length, errs = lines.filter(l => l.error).length;

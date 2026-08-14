@@ -17,9 +17,10 @@ re-deriving the math.
 |---|---|
 | **Item** | `watchlist-id` |
 | **Price** | $XX.XX USD |
-| **Was** | $XX.XX (baseline: median of N observations) |
-| **Drop** | XX% below baseline / XX% below target |
-| **Why it hit** | under target price \| 15%+ drop \| both |
+| **Was** | $XX.XX — this listing's own prior daily low (`node baseline.js <url>`) |
+| **History** | $A on YYYY-MM-DD → $B on YYYY-MM-DD → ... (verdict: MOVED \| DROP) |
+| **Drop** | XX% below its own prior low / XX% below the comparable-set median |
+| **Why it hit** | 15%+ below its own history \| 20%+ below comparables \| both |
 | **Retailer** | Best Buy |
 | **Seller** | Best Buy (first-party) \| third-party: <name> |
 | **Condition** | new \| open-box \| manufacturer refurbished |
