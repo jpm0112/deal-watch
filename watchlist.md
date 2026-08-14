@@ -95,6 +95,10 @@ monitors meeting the same must-haves
 - Slim, low-profile chassis
 - Matte / anti-glare finish
 - Single-cable USB-C operation (video + power on one port)
+- Wireless Apple connectivity — built-in AirPlay receiver or wireless
+  screen mirroring from Mac/iPad/iPhone (no cable). Rare on portable
+  panels, which are almost all wired USB-C/HDMI displays; a genuine
+  bonus when present, never required.
 
 **Known candidates to check**
 
