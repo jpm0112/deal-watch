@@ -41,6 +41,178 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-11 — Arzopa A1M 17.3" Large 1080p Portable Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $119.99 USD |
+| **Was** | $189.99 (this run's clean cross-sectional median, n=35 comparable 16"–18" listings) |
+| **Drop** | 36.8% below this run's going rate (no useful own-history baseline — page shows a permanent-looking "$189.99 $119.99 SAVE 37%" flash-sale display on every visit, same non-independent-anchor pattern documented since 2026-08-06) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("Availability: In Stock") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/a1m-17-3-1080p-fhd-ips-portable-monitor |
+
+**Specs matched**
+
+- Panel size: 17.3" — meets the 16"–18" must-have, close to the preferred 18"
+- HDMI input: Mini HDMI confirmed ("Features 2 full-featured Type-C ports and 1 MiniHDMI port")
+- USB-C video input: confirmed, 2x full-function Type-C (video + power)
+- Stand/cover: built-in kickstand confirmed
+- Single-cable USB-C operation: yes (full-function Type-C carries video + power)
+
+**Spec gaps / unconfirmed**
+
+- No case/cover bundled (kickstand only)
+- Matte/anti-glare finish not stated
+- 60Hz panel, 1080p — basic tier, still meets all stated must-haves
+
+**Notes**
+
+Same "permanent flash sale" display pattern as Arzopa's other listed models (countdown-free here, but identical was/now price on every observation since first logged) — not treated as a fresh price-drop event, but it independently clears the cross-sectional bar against this run's clean median the same way Z1C did on 2026-08-10. Not previously recorded in DEALS.md.
+
+---
+
+## 2026-08-11 — Arzopa Z1RC 16" 2.5K QHD Portable Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $124.99 USD |
+| **Was** | $189.99 (this run's clean cross-sectional median, n=35 comparable 16"–18" listings) |
+| **Drop** | 34.2% below this run's going rate (page shows a permanent-looking "$199.99 $124.99 SAVE 38%" display with a rolling countdown timer on every visit — not an independent baseline, same caveat as other Arzopa listings) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("Availability: In Stock") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/z1rc-2k-portable-monitor |
+
+**Specs matched**
+
+- Panel size: 16" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI confirmed ("Input Interface: Mini HD(Video Signal), Type-C Full Function")
+- USB-C video input: confirmed, dual full-function Type-C ports
+- Stand/cover: built-in kickstand confirmed
+- Resolution: 2560x1600 QHD — well above the 1080p "nice to have" bar
+
+**Spec gaps / unconfirmed**
+
+- No case/cover bundled by default (a bag is offered as a paid add-on)
+- Matte/anti-glare finish not stated
+
+**Notes**
+
+Notably a QHD panel at a price usually reserved for 1080p budget monitors in this catalog — genuinely below going rate for its spec tier, not just its brand tier. Same "flash sale" display caveat as A1M/Z1FC above (not claimed as a fresh drop). Not previously recorded in DEALS.md.
+
+---
+
+## 2026-08-11 — Arzopa Z1FC 16.1" 144Hz Portable Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $129.99 USD |
+| **Was** | $189.99 (this run's clean cross-sectional median, n=35 comparable 16"–18" listings) |
+| **Drop** | 31.6% below this run's going rate (page shows a permanent-looking "$179.99 $129.99 SAVE 28%" display with a rolling countdown timer on every visit — not an independent baseline) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("Availability: In Stock") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/z1fc-16-1-fhd-144hz-portable-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI confirmed
+- USB-C video input: confirmed, dual full-function Type-C ports
+- Stand/cover: built-in kickstand confirmed
+- Refresh rate: 144Hz — gaming-tier feature at a budget price
+
+**Spec gaps / unconfirmed**
+
+- No case/cover bundled (sleeve bag is a separate SKU/variant)
+- Matte/anti-glare finish not stated
+
+**Notes**
+
+144Hz is normally a premium feature in this catalog; this SKU carries it well below the going rate for comparable panels. Same "flash sale" display caveat as the other Arzopa entries above. Not previously recorded in DEALS.md.
+
+---
+
+## 2026-08-11 — Arzopa Z3FC 16.1" 2.5K 180Hz Portable Gaming Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $145.99 USD |
+| **Was** | $189.99 (this run's clean cross-sectional median, n=35 comparable 16"–18" listings) |
+| **Drop** | 23.2% below this run's going rate (page shows a permanent-looking "$359.99 $145.99 SAVE 59%" display with a rolling countdown timer on every visit — not an independent baseline, same caveat as the other Arzopa entries above) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("In Stock - Estimated delivery in 2-4 business days") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/arzopa-z3fc-16-1-180hz-2560x1440-qhd-portable-gaming-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI (2.0) confirmed
+- USB-C video input: confirmed, 2x USB-C (PD power + DP output)
+- Stand/cover: integrated stand *and* a premium protective sleeve included in the box — clears the must-have with margin
+- Resolution/refresh: 2.5K QHD @ 180Hz — Arzopa's top gaming tier, priced below this run's median for the whole (mostly 1080p/60Hz) comparable set
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not stated
+- HDMI port caps out at 144Hz (180Hz requires the USB-C/DP path) — not a must-have gap, just a usage note
+
+**Notes**
+
+Arzopa's flagship model in the comparable set, priced *higher* than the brand's other three hits this run (A1M/Z1RC/Z1FC) but still 23.2% under the run's overall clean median — a 2026-08-05T14:12Z entry previously used this same higher-than-siblings pricing as a reason to distrust a *longitudinal* "42.3% below its own fake median" claim on this exact listing; that reasoning doesn't apply to the cross-sectional comparison made here, which only requires being cheaper than the going rate for comparable specs across the whole run, and it clears that independently. Not previously recorded in DEALS.md.
+
+---
+
+## 2026-08-10 — Arzopa Z1C 16.1" FHD 100% sRGB Portable Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $89.99 USD |
+| **Was** | $189.99 (this run's clean cross-sectional median, n=43 comparable 16"–18.5" listings) |
+| **Drop** | 52.6% below this run's going rate (no useful own-history baseline — every prior observation of this URL is the same $89.99, so 0% longitudinal drop) |
+| **Why it hit** | 20%+ below going rate (cross-sectional only) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("Availability: In Stock") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/z1c-16-1-100-srgb-fhd-1080p-portable-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI — confirmed ("Input Interface: Mini HD(Video Signal)"; box includes a Mini HDMI-to-HDMI cable)
+- USB-C video input: confirmed — "Type-C Full Function (Video Data, Power Supply)"
+- Stand/cover: built-in kickstand confirmed ("no bulky covers needed"); no separate cover bundled
+- Portability: listed as lightweight/thin, single USB-C cable for one-cable operation
+
+**Spec gaps / unconfirmed**
+
+- No case/cover included (kickstand only) — a mild negative per watchlist notes, not a disqualifier
+- Matte/anti-glare finish not stated
+- Refresh rate 60Hz (basic panel, not gaming-tier — still meets all stated must-haves)
+
+**Notes**
+
+Page shows "$89.99 $159.99 SAVE 44%" with no stated end date. scrape.js logged this same URL at both $89.99 and $159.99 in every run since 2026-08-05 (list price vs. sale price captured as two separate rows) — live page confirms $89.99 is the real, current, standing price, not a badge artifact. Because it's been steady at $89.99 for 5+ days, this is more "persistently good" than "just dropped," but it still clears the cross-sectional bar on its own merits and has not been recorded in DEALS.md before.
+
+---
+
 ## 2026-08-07 — Motorola Moto G Stylus 5G (2024), 256GB, Unlocked (Caramel Latte)
 
 | | |
