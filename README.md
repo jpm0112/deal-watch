@@ -31,8 +31,9 @@ good turns up.
    but under it) get one unverified row each in `CANDIDATES.md`.
 5. Commit and push.
 
-The routine uses **no connectors** and sends nothing. `DEALS.md` and the
-commit history are the only output. Notification is handled separately.
+The routine uses **no connectors** and sends nothing itself. `DEALS.md`, the
+commit history, and — for a must-buy only — a GitHub issue on this repo are
+the entire output surface.
 
 ## The price log
 
@@ -71,6 +72,26 @@ price per day (the low) and reports whether that price has ever changed.
 
 The price cap in `watchlist.md` is a relevance filter, not a goal. Being
 under the cap is never itself a reason to alert.
+
+## Must-buy
+
+`DEALS.md` records anything that clears the bars. A **must-buy** is stricter,
+and it is the only thing that earns a notification:
+
+1. Movement verdict is `DROP` — the price fell 15%+ below this listing's own
+   prior daily low, which also makes it the lowest it has ever been recorded.
+2. **Both** relative rules fire, not one: it is *also* 20%+ below the median of
+   comparable listings **in its own spec tier** (a 1080p/60Hz panel is not
+   comparable to a QHD/144Hz one, and flattering it with that median is how the
+   Arzopa entries got recorded as hits on 2026-08-11).
+3. Verification is clean: first-party or manufacturer seller, in stock, live —
+   not an expired post — and every must-have spec confirmed on the page itself.
+
+Anything that fails 2 or 3 is a normal `DEALS.md` entry, not a must-buy. Expect
+one to fire once or twice a month at most. Silence is the system working.
+
+When one fires, the routine opens a GitHub issue titled `MUST-BUY: <product>
+$X`, which GitHub emails to you. Nothing else notifies.
 
 ## Permanent discounts
 

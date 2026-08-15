@@ -38,7 +38,10 @@ const SEARCH = {
   microcenter: q => `https://www.microcenter.com/search/search_results.aspx?Ntt=${enc(q)}`,
   adorama:     q => `https://www.adorama.com/l/?searchinfo=${enc(q)}`,
   monoprice:   q => `https://www.monoprice.com/search/index?keyword=${enc(q)}`,
-  slickdeals:  q => `https://slickdeals.net/newsearch.php?q=${enc(q)}`,
+  // ponytail: slickdeals removed 2026-08-15 — a forum post's price never changes,
+  // so it can never clear the movement gate, and 3 weeks of RUNLOG show every
+  // thread opened was expired. It was 43% of all tracked listings and 0% of the
+  // movement. Restore it only behind a live/expired filter (see sources.md).
   target:      q => `https://www.target.com/s?searchTerm=${enc(q)}`,
   officedepot: q => `https://www.officedepot.com/catalog/search.do?Ntt=${enc(q)}`,
   backmarket:  q => `https://www.backmarket.com/en-us/search?q=${enc(q)}`,
@@ -63,7 +66,9 @@ const FIXED = {
 // redesigns better than per-site selectors; per-site selectors live in
 // sources.md notes when this misses.
 
-const EXTRACT = () => {
+const EXTRACT = (pageUrl) => {
+  const bare = href => href.split('?')[0].replace(/\/$/, '');
+  const self = bare(pageUrl);                            // this search page itself
   const priceRe = /\$\s?\d[\d,]*(?:\.\d{2})?/;          // contained, not exact —
   // Reference prices, not what the listing charges: "Save $50", "20% off",
   // "Reg. $199.99", "was $159.99". Logging these as observations is what makes
@@ -85,6 +90,11 @@ const EXTRACT = () => {
     const title = link.innerText.trim().split('\n')[0];
     const price = Number((t.match(priceRe) || [''])[0].replace(/[$,\s]/g, ''));
     const url = link.href.split('?')[0];
+    // A "card" whose link points back at this same search page is the price-range
+    // filter sidebar, not a product: its $100/$200/$300 are facet buckets. Best
+    // Buy's entire contribution to the log was one of these ("Unlocked Cell
+    // Phones", $100-$500) masquerading as a listing.
+    if (bare(url) === self) continue;
     const key = `${url}|${price}`;
     if (title && price > 0 && url && !seen.has(key)) { seen.add(key); out.push({ title, price, url }); }
   }
@@ -110,7 +120,7 @@ async function fetchListings(browser, url) {
     for (let i = 0; i < 4; i++) { await page.mouse.wheel(0, 1200); await page.waitForTimeout(1500); }
     const title = await page.title();
     if (status >= 400 || BLOCKED_RE.test(title)) return { error: `HTTP ${status} / "${title.slice(0, 60)}"` };
-    const listings = await page.evaluate(EXTRACT);
+    const listings = await page.evaluate(EXTRACT, url);
     if (!listings.length) return { error: `HTTP ${status}, page loaded but 0 prices extracted` };
     return { listings };
   } catch (e) {

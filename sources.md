@@ -24,7 +24,7 @@ list, or the request dies with `403 host_not_allowed`.
 | Site | Domain | Prices seen | Notes |
 |---|---|---|---|
 | Newegg | newegg.com | 113 | Best yield of any retailer. Strong on monitors. Watch third-party sellers. |
-| Slickdeals | slickdeals.net | 101 | **The Amazon workaround.** Human-vetted deals incl. Amazon listings. |
+| ~~Slickdeals~~ | slickdeals.net | 101 | **Removed 2026-08-15** — static forum prices, all posts expired. See notes. |
 | Back Market | backmarket.com | 93 | Refurb grading explicit. Confirm "unlocked" per listing. |
 | Adorama | adorama.com | 84 | B&H competitor, similar monitor stock. |
 | Lenovo | lenovo.com | 55 | ThinkVision M-series, discounted hard and often. |
@@ -91,12 +91,21 @@ look undercounts (Target proved this).
   serve the rest. Repeated same-site requests in one run trigger it.
 - **Adorama** — loads (HTTP 200) but the generic extractor gets nothing;
   likely shadow-DOM or iframe pricing. Parked.
-- **Best Buy** — serves a facet-only skeleton until the page is scrolled;
-  scrape.js scrolls for this reason. Its "$25 – $49.99" facet labels look
-  like prices; the min-price filter absorbs most of them.
-- **Known noise**: "Save $50"-style badges get captured as prices. This is
-  why every candidate deal must be verified on its product page before it
-  reaches DEALS.md.
+- **Best Buy** — effectively dead, not merely thin. Across 2026-08-03..11 it
+  produced 32 "0 prices extracted" errors, a dozen connection resets, and
+  exactly ONE "listing": the price-range filter sidebar ("Unlocked Cell
+  Phones", $100/$150/$200/$250/$500 — facet buckets, all above the $80 min, so
+  the min-price filter never absorbed them as previously assumed). scrape.js
+  now discards any card whose link points back at the search page itself,
+  which removes the facet rows; the 0-prices problem is unfixed. Probe it
+  again; if it errors, mark it Blocked rather than letting it fail weekly.
+- **Slickdeals — REMOVED 2026-08-15.** It was 43% of all tracked listings and
+  produced zero price movement in three weeks: a forum post's price is static
+  text, so it can never clear the movement gate in README.md, and every thread
+  the routine opened was expired. Restore only behind a live/expired filter.
+- **Known noise**: "Save $50"-style badges get captured as prices. scrape.js
+  now skips price nodes labelled save/off/was/reg/msrp/%, but verification on
+  the product page is still the rule, not the exception.
 - Yield varies run to run (anti-bot serving is nondeterministic). A site
   yielding 0 in one run and 25 in the next is normal; only a site erroring
   consistently across weeks needs attention.
@@ -109,6 +118,8 @@ look undercounts (Target proved this).
   deals found." Silent failure is the main way this routine rots.
 - Record the seller for marketplace listings (Newegg/eBay/Walmart). A
   third-party seller at a suspiciously good price is usually not a deal.
-- Prefer Slickdeals for *Amazon* pricing; use retailer pages for their own.
+- Amazon pricing is currently unreachable: Amazon and Camelcamelcamel are
+  blocked and Slickdeals is removed. Treat Amazon as out of scope rather than
+  inferring its prices from a third party.
 - Shipping and tax are excluded from recorded prices unless the site makes
   them unavoidable — note it if so.
