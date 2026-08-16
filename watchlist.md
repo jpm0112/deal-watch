@@ -206,7 +206,10 @@ to a bare console's.
 ## streaming-stick
 
 **Category:** HDMI streaming device (to drive the portable monitor)
-**Price cap:** $160 — relevance filter, not a goal. Ignore anything above it.
+**Price cap:** $260 — relevance filter, not a goal. Ignore anything above it.
+Raised from $160 on 2026-08-16: Apple's June price hike put the Apple TV 4K
+at $199/$249, and the old cap would have filtered out the one device that
+meets the requirement.
 **Min price:** $15 — below this it's a remote, cable, case, or mount.
 **Search queries:** google tv streamer 4k; chromecast with google tv; apple tv 4k
 **Match keywords:** chromecast; google tv streamer; google tv 4k; apple tv; onn 4k; streaming device; streaming player
@@ -220,15 +223,16 @@ devices in the same tier
 
 - Self-contained streaming device with an HDMI output — not a TV, not a
   dongle that only mirrors from a phone
-- Built-in Wi-Fi and its own apps (Netflix, YouTube, Prime, Disney+)
+- Built-in Wi-Fi and its own apps (Netflix, YouTube, Prime, Disney+),
+  able to join an iPhone Personal Hotspot as its network
+- **Native AirPlay 2** — the source phone is an iPhone and there is no
+  Wi-Fi network, so mirroring personal/downloaded files depends on
+  peer-to-peer AirPlay. In practice this narrows the pool to Apple TV.
 - Its own remote in the box
 - Stick or small puck — travels in the laptop bag next to the monitor
-- New or manufacturer-refurbished — no third-party used
+- New, open-box, or manufacturer-refurbished — no third-party used
 
 **Nice to have**
-
-- AirPlay 2 support — wanted, but unobtainable in this pool (see Notes);
-  don't hold out for it
 - Powered from a 5 V USB port rather than a wall-only supply — one fewer
   outlet on the road
 - 4K, though the portable monitor is 1080p — only worth it at stick prices
@@ -265,6 +269,31 @@ Apple TV 4K got more expensive, not less: Apple raised US list on
 Apple Certified Refurbished 64 GB is ~$169. So the AirPlay tier is now a
 $170+ proposition, and the box needs a wall outlet (figure-8 cord, no USB
 power), which is the worst travel fit in the pool.
+
+**The setup this has to serve, settled 2026-08-16.** Source device is an
+iPhone. There is no Wi-Fi network — internet is the phone's hotspot only.
+Content is Netflix/Disney+, YouTube and browser video, and downloaded
+personal files. Consequences, in order of how much they narrow the field:
+
+1. Netflix and Disney+ block screen mirroring (DRM), so they only work as
+   apps running *on the streaming device* — which means the device is on
+   the hotspot and burning cellular data whenever they're used. No device
+   choice avoids this.
+2. Personal/downloaded files are the opposite case: peer-to-peer AirPlay
+   mirrors them with no network and no data at all.
+3. Serving both (1) and (2) from an iPhone requires native AirPlay, so
+   Apple TV 4K is effectively the only qualifying device. Miracast is out
+   (Apple has never supported it) and the MiraScreen/AnyCast clone dongles
+   fail exactly on the DRM apps that matter most.
+
+So this item is now really an Apple TV 4K price watch. The Google TV
+Streamer stays in the comparable set as the price anchor, not as a
+candidate — it can't serve requirement (2) from an iPhone.
+
+Cellular data, not hardware, is the binding constraint: ~3 GB/hr at 1080p
+and ~7 GB/hr at 4K. The monitor is 1080p, so cap the streaming bitrate and
+treat 4K output as irrelevant here. Check the carrier plan's hotspot
+allowance before assuming this setup is usable for a full evening.
 
 Buy-point reference, verified on the product pages 2026-08-16: Google TV
 Streamer 4K is $99.99 at both Best Buy and Target — that's list, not a deal.
