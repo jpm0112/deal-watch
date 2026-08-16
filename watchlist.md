@@ -200,3 +200,59 @@ hike), so a Digital at its normal price looks like a "deal" against a
 Pro median. Match the tier from the title before pooling. Bundles are
 fine but note the bundle contents — a bundle's price isn't comparable
 to a bare console's.
+
+---
+
+## streaming-stick
+
+**Category:** HDMI streaming device (to drive the portable monitor)
+**Price cap:** $160 — relevance filter, not a goal. Ignore anything above it.
+**Min price:** $15 — below this it's a remote, cable, case, or mount.
+**Search queries:** chromecast google tv streamer; roku streaming stick 4k; fire tv stick 4k max
+**Match keywords:** chromecast; google tv streamer; roku; fire tv stick; apple tv; streaming stick; streaming device; streaming player
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+devices in the same tier
+**Status:** active
+**Exclude keywords:** remote control; replacement remote; voice remote; case; cover; mount; wall mount; hdmi cable; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; roku tv; fire tv omni; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card
+**Tiers:** box: apple tv | google tv streamer | fire tv cube | roku ultra; stick: *
+
+**Must have**
+
+- Self-contained streaming device with an HDMI output — not a TV, not a
+  dongle that only mirrors from a phone
+- Built-in Wi-Fi and its own apps (Netflix, YouTube, Prime, Disney+)
+- Its own remote in the box
+- Stick or small puck — travels in the laptop bag next to the monitor
+- New or manufacturer-refurbished — no third-party used
+
+**Nice to have**
+
+- AirPlay 2 support (Roku and Fire TV 4K / 4K Max have it; Google TV does not)
+- Powered from a 5 V USB port rather than a wall-only supply — one fewer
+  outlet on the road
+- 4K, though the portable monitor is 1080p — only worth it at stick prices
+- Bluetooth audio out, to pair headphones or a speaker
+- Ethernet port or adapter included (hotel Wi-Fi)
+
+**Known candidates to check**
+
+- Roku Streaming Stick 4K / Plus — AirPlay 2, USB-powered, cheapest path
+- Amazon Fire TV Stick 4K Max — AirPlay 2, discounts around Prime days
+- Google TV Streamer 4K — no AirPlay, wall-powered, priciest of the sticks
+- Onn 4K Google TV / Onn 4K Pro (Walmart) — the floor of the category
+- Apple TV 4K — native AirPlay, but a box at 3x stick prices
+
+**Notes**
+
+Compare within tiers, never across: sticks list at $20–$50 and boxes at
+$99–$150, so a box at its normal price looks like a "deal" against a stick
+median. Match the tier from the title before pooling.
+
+Portable-monitor specifics: the monitor's speakers are weak or absent, so
+audio out (Bluetooth, or the monitor's 3.5 mm jack) matters more than
+resolution here. Check the monitor's HDMI port type before buying — a stick
+into a recessed mini-HDMI port usually needs a short extender, so budget for
+one rather than treating it as a dealbreaker.
+
+**Condition:** new or open-box, including Best Buy open-box and
+manufacturer-refurbished. No third-party used listings.
