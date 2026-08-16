@@ -208,13 +208,13 @@ to a bare console's.
 **Category:** HDMI streaming device (to drive the portable monitor)
 **Price cap:** $160 — relevance filter, not a goal. Ignore anything above it.
 **Min price:** $15 — below this it's a remote, cable, case, or mount.
-**Search queries:** chromecast google tv streamer; roku streaming stick 4k; fire tv stick 4k max
-**Match keywords:** chromecast; google tv streamer; roku; fire tv stick; apple tv; streaming stick; streaming device; streaming player
+**Search queries:** google tv streamer 4k; chromecast with google tv; apple tv 4k
+**Match keywords:** chromecast; google tv streamer; google tv 4k; apple tv; onn 4k; streaming device; streaming player
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 devices in the same tier
 **Status:** active
-**Exclude keywords:** remote control; replacement remote; voice remote; case; cover; mount; wall mount; hdmi cable; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; roku tv; fire tv omni; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card
-**Tiers:** box: apple tv | google tv streamer | fire tv cube | roku ultra; stick: *
+**Exclude keywords:** roku; fire tv; firestick; fire stick; remote control; replacement remote; voice remote; case; cover; mount; wall mount; hdmi cable; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card
+**Tiers:** box: apple tv|google tv streamer; stick: *
 
 **Must have**
 
@@ -227,7 +227,8 @@ devices in the same tier
 
 **Nice to have**
 
-- AirPlay 2 support (Roku and Fire TV 4K / 4K Max have it; Google TV does not)
+- AirPlay 2 support — wanted, but not at the cost of taking a Roku or a
+  Fire TV, both of which are out (see Notes)
 - Powered from a 5 V USB port rather than a wall-only supply — one fewer
   outlet on the road
 - 4K, though the portable monitor is 1080p — only worth it at stick prices
@@ -236,13 +237,19 @@ devices in the same tier
 
 **Known candidates to check**
 
-- Roku Streaming Stick 4K / Plus — AirPlay 2, USB-powered, cheapest path
-- Amazon Fire TV Stick 4K Max — AirPlay 2, discounts around Prime days
-- Google TV Streamer 4K — no AirPlay, wall-powered, priciest of the sticks
-- Onn 4K Google TV / Onn 4K Pro (Walmart) — the floor of the category
+- Google TV Streamer 4K — the current Chromecast successor
+- Chromecast with Google TV 4K / HD — discontinued, so watch clearance
+  and manufacturer-refurb rather than list
+- Onn 4K Google TV / Onn 4K Pro — the floor of the category, but
+  Walmart-only and Walmart is parked as a source, so it won't show up
+  in the log; check it by hand
 - Apple TV 4K — native AirPlay, but a box at 3x stick prices
 
 **Notes**
+
+No Roku and no Amazon Fire TV — excluded by preference, not by spec, so
+don't reintroduce them because a price looks good. That leaves the Google
+TV family and Apple TV.
 
 Compare within tiers, never across: sticks list at $20–$50 and boxes at
 $99–$150, so a box at its normal price looks like a "deal" against a stick
