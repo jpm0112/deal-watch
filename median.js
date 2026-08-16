@@ -28,9 +28,21 @@ const { parseWatchlist } = require('./scrape');
 const CROSS_SECTIONAL_DROP = 0.20; // candidate → hit
 const NEAR_MISS = 0.10;            // candidate → CANDIDATES.md breadcrumb
 
-/** URLs listed in NOISE.md — verified junk, excluded from every median. */
+/**
+ * NOISE.md matcher — verified junk, excluded from every median.
+ * A row's URL matches exactly (query string and #fragment ignored); a row
+ * ending in `*` matches as a prefix, for seller families that mint a new SKU
+ * URL per listing (the Newegg "Generic Logic, Inc." pattern).
+ */
 function readNoiseUrls(md) {
-  return new Set([...md.matchAll(/^\|\s*(https?:\/\/\S+)/gm)].map(m => m[1].split('?')[0]));
+  const bare = url => url.split(/[?#]/)[0];
+  const rows = [...md.matchAll(/^\|\s*(https?:\/\/\S+)/gm)].map(m => m[1]);
+  const exact = new Set(rows.filter(u => !u.endsWith('*')).map(bare));
+  const prefixes = rows.filter(u => u.endsWith('*')).map(u => u.slice(0, -1));
+  return {
+    size: rows.length,
+    has: url => exact.has(bare(url)) || prefixes.some(p => url.startsWith(p)),
+  };
 }
 
 /** One observation per URL for the given day: verified beats scraped, else the low. */
@@ -139,8 +151,12 @@ function selftest() {
     { ts: `${day}T00:00:00Z`, item: 'ps5', url: 'u/9', title: 'PS5 Disc White', price: 50 },
     { ts: `${day}T00:00:00Z`, item: 'ps5', url: 'u/9', title: 'PS5 Disc White', price: 490, verified: true },
   ];
-  const noise = readNoiseUrls('# Noise\n\n| URL | Reason |\n|---|---|\n| https://x.test/noise?x=1 | scam |\n');
+  const noise = readNoiseUrls(
+    '# Noise\n\n| URL | Reason |\n|---|---|\n| https://x.test/noise?x=1 | scam |\n| https://x.test/family-* | seller family |\n');
   assert.ok(noise.has('https://x.test/noise'), 'noise URL parsed, query string stripped');
+  assert.ok(noise.has('https://x.test/noise#lnk=sametab'), 'fragment on the observed URL ignored');
+  assert.ok(noise.has('https://x.test/family-00BC9'), 'trailing-* row matches as a prefix');
+  assert.ok(!noise.has('https://x.test/other'), 'unlisted URL passes');
 
   const pools = buildPools(item, dayObservations(rows, day), noise);
   const byLabel = Object.fromEntries(pools.map(pool => [pool.label, pool]));
@@ -170,7 +186,7 @@ if (require.main === module) {
     const { rows, skipped } = readObservations(fs.readFileSync(`${__dirname}/prices.jsonl`, 'utf8'));
     if (skipped) console.warn(`skipped ${skipped} unparseable line(s)`);
     const items = parseWatchlist(fs.readFileSync(`${__dirname}/watchlist.md`, 'utf8'));
-    let noiseUrls = new Set();
+    let noiseUrls = { size: 0, has: () => false };
     try { noiseUrls = readNoiseUrls(fs.readFileSync(`${__dirname}/NOISE.md`, 'utf8')); }
     catch (e) { if (e.code !== 'ENOENT') throw e; }
     const day = process.argv[2] || rows[rows.length - 1].ts.slice(0, 10);

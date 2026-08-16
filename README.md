@@ -19,6 +19,7 @@ good turns up.
 | `median.js` | This run's cross-sectional medians and candidates, rules applied from `watchlist.md` + `NOISE.md`. |
 | `DEALS.md` | Human-readable verified findings, newest first. |
 | `CANDIDATES.md` | Near-misses (10%+ below a median, under the bar). Unverified breadcrumbs. |
+| `NOISE.md` | Verified-junk URLs with durable reasons. Excluded from medians, never re-verified. |
 | `routine-prompt.md` | The instructions pasted into the cloud routine. |
 
 ## How a run works
