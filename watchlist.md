@@ -123,6 +123,19 @@ good deal over it.
 **Condition:** new or open-box, including Best Buy open-box and
 manufacturer-refurbished. No third-party used listings.
 
+**Use context added 2026-08-16.** This panel also has to serve the
+`playstation-5` purchase (GTA 6) and an Apple TV, not just a laptop. Two
+consequences when judging listings:
+
+- Prefer **16:9** over 16:10. Consoles output 16:9, so a 2560x1600 16:10
+  panel letterboxes console and video content; 2560x1440 matches natively.
+- Count **what's in the box**. A bundled sleeve and HDMI-to-Mini-HDMI cable
+  are worth ~$30 here, because neither the Apple TV nor a PS5 has Mini
+  HDMI and the sleeve is what satisfies the backpack-fit must-have. A
+  cheaper bare panel can lose on total cost — compare all-in, not sticker.
+- Nothing bus-powers the panel when a console or Apple TV drives it (no
+  laptop USB-C in that path), so a USB-C power source is part of the kit.
+
 ---
 
 ## iphone-14-pro
