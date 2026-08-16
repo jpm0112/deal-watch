@@ -28,9 +28,15 @@ function parseWatchlist(md) {
       excludes: excludes.length ? new RegExp(excludes.join('|'), 'i') : null,
       // "name: kw1 | kw2; name2: *" — first tier whose regex matches the title
       // wins; "*" is the catch-all. No Tiers line means one undivided pool.
+      // Each alternative is trimmed: the documented format spaces them out, but
+      // those spaces land INSIDE the pattern, so "a | b" compiled to /a | b/ and
+      // only matched " b" mid-string. A title starting with the tier name —
+      // "PlayStation 5 Pro Console" — fell through to the catch-all tier and
+      // polluted the median it was supposed to be compared against.
       tiers: anyOf(grab(/\*\*Tiers:\*\*\s*(.+)/) || '').map(part => {
         const [name, pattern] = part.split(':').map(s => s.trim());
-        return { name, re: pattern === '*' ? /(?:)/ : new RegExp(pattern, 'i') };
+        const alternatives = pattern.split('|').map(s => s.trim()).filter(Boolean).join('|');
+        return { name, re: pattern === '*' ? /(?:)/ : new RegExp(alternatives, 'i') };
       }),
     };
   }).filter(it => it.active && !it.id.startsWith('How '));
@@ -148,7 +154,32 @@ async function fetchListings(browser, url) {
 
 module.exports = { parseWatchlist };
 
-if (require.main === module) (async () => {
+/** node scrape.js --selftest — pins the tier-spacing regression. No network. */
+function selftest() {
+  const assert = require('assert');
+  const md = [
+    '## demo',
+    '**Status:** active',
+    '**Match keywords:** ps5; playstation 5',
+    '**Tiers:** pro: ps5 pro | playstation 5 pro; digital: digital; disc: *',
+    '',
+  ].join('\n');
+  const [item] = parseWatchlist(md);
+  const tierOf = title => (item.tiers.find(t => t.re.test(title)) || {}).name;
+
+  // The regression: spaces around "|" used to leak into the pattern, so a title
+  // that STARTS with the tier name missed and fell through to the catch-all.
+  assert.equal(tierOf('PlayStation 5 Pro Console'), 'pro', 'title-initial match');
+  assert.equal(tierOf('Sony - PlayStation 5 Pro Console'), 'pro', 'mid-string match');
+  assert.equal(tierOf('PS5 Pro 2TB'), 'pro', 'first alternative');
+  assert.equal(tierOf('PlayStation 5 Digital Edition'), 'digital');
+  assert.equal(tierOf('PlayStation 5 Console'), 'disc', 'catch-all still catches');
+  console.log('selftest OK');
+}
+
+if (require.main === module && process.argv[2] === '--selftest') {
+  selftest();
+} else if (require.main === module) (async () => {
   const items = parseWatchlist(fs.readFileSync(`${__dirname}/watchlist.md`, 'utf8'));
   if (!items.length) { console.error('No active watchlist items parsed — check watchlist.md format.'); process.exit(1); }
 
