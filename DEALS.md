@@ -41,6 +41,40 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-16 — Arzopa Z3FC 16.1" 2.5K 180Hz Portable Gaming Monitor
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $139.99 USD |
+| **Was** | $145.99 — this listing's own prior daily low (`node baseline.js z3fc`) |
+| **History** | $145.99 on 2026-08-05 → $145.99 (flat through 2026-08-11) → $139.99 on 2026-08-16 (verdict: MOVED) |
+| **Drop** | 4.1% below its own prior low (under the 15% longitudinal bar) / 22.4% below this run's clean cross-sectional median ($180.49, n=28 comparable 16"–18.5" listings) |
+| **Why it hit** | 20%+ below comparables (cross-sectional only — own-history drop is real movement per baseline.js but too small to clear 15%) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("In Stock - Estimated delivery in 2-4 business days", Add to cart live) |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/arzopa-z3fc-16-1-180hz-2560x1440-qhd-portable-gaming-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: confirmed, up to 144Hz
+- USB-C video input: confirmed, "USB-C port that supports video output" (DisplayPort Alt Mode), up to 180Hz
+- Stand/cover: integrated stand + included protective case
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not stated
+- No built-in battery (nice-to-have) not confirmed either way
+
+**Notes**
+
+Page shows a permanent-looking "$359.99 → $139.99 SAVE 61%" flash-sale display (the $359.99 reference number is not treated as evidence — same non-independent-anchor pattern documented since 2026-08-06). This listing was already in `prices.jsonl` at a flat $145.99 across 5 prior runs (2026-08-05 through 2026-08-11); this run is the first time its real charged price has actually moved, confirmed by `baseline.js` (verdict MOVED, not FLAT), which is what clears the movement gate for this hit — the drop itself (4.1%) is real but modest, so this hit rests on the cross-sectional rule. No stated end date on the current $9-off checkout promo layered on top.
+
+---
+
 ## 2026-08-11 — Arzopa A1M 17.3" Large 1080p Portable Monitor
 
 | | |
