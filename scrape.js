@@ -157,7 +157,10 @@ if (require.main === module) (async () => {
   for (const [site, url] of Object.entries(FIXED))
     tasks.push({ site, url, item: null }); // matched against all items by keyword
 
-  // ponytail: PW_CHROME reuses a local browser when builds mismatch; unset in cloud.
+  // Browser pick: PW_CHROME wins; else the cloud sandbox's pre-installed build
+  // (/opt/pw-browsers/chromium), which every run since 2026-08-03 has needed —
+  // freshly-downloaded builds fail through the proxy (TLS 1.3 ClientHello reset
+  // on 2026-08-04, plain connection reset on 2026-08-11); else Playwright's own.
   // Cloud sandbox routes all egress through a local HTTPS_PROXY; Chromium doesn't
   // read that env var itself, so it's passed explicitly. TLS is capped at 1.2
   // because this proxy's path resets the connection on Chromium's TLS 1.3
@@ -165,11 +168,30 @@ if (require.main === module) (async () => {
   // confirmed via --log-net-log: CONNECT succeeds, then the raw socket gets
   // RST (net_error -101) right after ClientHello, every time, every domain.
   const proxyServer = process.env.HTTPS_PROXY || process.env.https_proxy;
+  const CLOUD_CHROMIUM = '/opt/pw-browsers/chromium';
   const browser = await chromium.launch({
-    executablePath: process.env.PW_CHROME || undefined,
+    executablePath: process.env.PW_CHROME
+      || (fs.existsSync(CLOUD_CHROMIUM) ? CLOUD_CHROMIUM : undefined),
     proxy: proxyServer ? { server: proxyServer } : undefined,
     args: ['--ssl-version-max=tls1.2'],
   });
+  // --preflight: prove the run's ACTUAL browser+proxy path can load a page.
+  // A bare launch()-and-close is not enough — on 2026-08-11 it passed while
+  // page.goto() reset on every domain, and the failure surfaced 20 minutes in.
+  if (process.argv[2] === '--preflight') {
+    const ctx = await browser.newContext();
+    const page = await ctx.newPage();
+    try {
+      const resp = await page.goto('https://example.com', { timeout: 30000 });
+      if (resp && resp.status() < 400) { console.log('BROWSER OK'); await browser.close(); return; }
+      console.error(`BROWSER PREFLIGHT FAILED: HTTP ${resp ? resp.status() : 0}`);
+    } catch (e) {
+      console.error(`BROWSER PREFLIGHT FAILED: ${e.message.split('\n')[0]}`);
+    }
+    await browser.close();
+    process.exit(3);
+  }
+
   const errors = [], summary = {};
   const ts = new Date().toISOString();
   // One observation per listing per run, at the LOWEST price it showed.
