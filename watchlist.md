@@ -9,7 +9,12 @@ Keep `id` stable — it's the key used in the price log. Everything under
 `scrape.js` machine-reads four lines per item — keep their format exactly:
 `**Price cap:** $N`, `**Min price:** $N`, `**Search queries:** a; b; c`
 (semicolon-separated), `**Match keywords:** a; b; c` (any-of title filter).
-Everything else in a section is for the reviewing agent, not the scraper.
+`median.js` reads two more, both optional: `**Exclude keywords:** a; b; c`
+(any-of title filter — dropped from the comparable set, still logged) and
+`**Tiers:** name: kw1 | kw2; name2: *` (first tier whose pattern matches the
+title wins; `*` is the catch-all; no match = not comparable). Grow the
+exclude lists here — never re-derive them per run. Everything else in a
+section is for the reviewing agent, not the scraper.
 
 ## How "good deal" is decided
 
@@ -38,6 +43,7 @@ aren't what I'm shopping for. Never search toward the cap, and never treat
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 phones meeting the same must-haves
 **Status:** active
+**Exclude keywords:** cordless; dect; landline; corded; vtech; conference phone; smartwatch; moto watch; watch band; tablet; ipad; phone case; screen protector; charger; charging; phone drive; usb drive; flash drive; ssd; galaxy s8; galaxy s9; galaxy buds; earbuds; pre-owned; prepaid; boost mobile; total by verizon; straight talk; tracfone
 
 **Must have**
 
@@ -79,6 +85,7 @@ confirmed against the specific model number, not the product family.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 monitors meeting the same must-haves
 **Status:** active
+**Exclude keywords:** ceiling mount; wall mount; desk mount; monitor arm; docking; laptop screen extender; 21\.5; 23\.8; 24 inch; 24\"; 25 inch; 27 inch; 27\"; 32 inch; 32\"; webcam; privacy filter; screen protector
 
 **Must have**
 
@@ -128,6 +135,7 @@ manufacturer-refurbished. No third-party used listings.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 listings meeting the same must-haves
 **Status:** active
+**Exclude keywords:** pro max; phone case; screen protector; charger; cable; magsafe; wallet; band
 
 **Must have**
 
@@ -165,6 +173,8 @@ median.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 the same model tier
 **Status:** active
+**Exclude keywords:** controller; dualsense; headset; headphone; ssd; heatsink; faceplate; cover plate; skin; charging station; gift card; game drive; media remote; camera
+**Tiers:** pro: ps5 pro | playstation 5 pro; digital: digital; disc: *
 
 **Must have**
 

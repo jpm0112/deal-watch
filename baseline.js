@@ -200,12 +200,16 @@ function selftest() {
 
 // --- main --------------------------------------------------------------------
 
-const arg = process.argv[2];
-if (arg === '--selftest') {
-  selftest();
-} else {
-  const { rows, skipped } = readObservations(fs.readFileSync(`${__dirname}/prices.jsonl`, 'utf8'));
-  if (skipped) console.warn(`skipped ${skipped} unparseable line(s)`);
-  const byUrl = indexByListing(rows);
-  if (arg) printListing(byUrl, arg); else printReport(byUrl);
+module.exports = { readObservations, indexByListing, summarize, verdict, LONGITUDINAL_DROP };
+
+if (require.main === module) {
+  const arg = process.argv[2];
+  if (arg === '--selftest') {
+    selftest();
+  } else {
+    const { rows, skipped } = readObservations(fs.readFileSync(`${__dirname}/prices.jsonl`, 'utf8'));
+    if (skipped) console.warn(`skipped ${skipped} unparseable line(s)`);
+    const byUrl = indexByListing(rows);
+    if (arg) printListing(byUrl, arg); else printReport(byUrl);
+  }
 }

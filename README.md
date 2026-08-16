@@ -16,6 +16,7 @@ good turns up.
 | `verify.js` | Records a price read off a product page. The only hand-append path. |
 | `prices.jsonl` | Append-only observation log. Never edited, never pruned. |
 | `baseline.js` | Each listing's own price history. Has this price ever actually moved? |
+| `median.js` | This run's cross-sectional medians and candidates, rules applied from `watchlist.md` + `NOISE.md`. |
 | `DEALS.md` | Human-readable verified findings, newest first. |
 | `CANDIDATES.md` | Near-misses (10%+ below a median, under the bar). Unverified breadcrumbs. |
 | `routine-prompt.md` | The instructions pasted into the cloud routine. |

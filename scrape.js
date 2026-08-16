@@ -14,14 +14,24 @@ function parseWatchlist(md) {
   return md.split(/^## /m).slice(1).map(sec => {
     const id = sec.split('\n')[0].trim();
     const grab = re => (re.exec(sec) || [])[1];
+    const anyOf = text => text.split(';').map(s => s.trim()).filter(Boolean);
+    const excludes = anyOf(grab(/\*\*Exclude keywords:\*\*\s*(.+)/) || '');
     return {
       id,
       active: /\*\*Status:\*\*\s*active/.test(sec),
       cap: Number(grab(/\*\*Price cap:\*\*\s*\$?(\d+)/) || Infinity),
       min: Number(grab(/\*\*Min price:\*\*\s*\$?(\d+)/) || 0),
-      queries: (grab(/\*\*Search queries:\*\*\s*(.+)/) || '').split(';').map(s => s.trim()).filter(Boolean),
-      keywords: new RegExp(
-        (grab(/\*\*Match keywords:\*\*\s*(.+)/) || id).split(';').map(s => s.trim()).filter(Boolean).join('|'), 'i'),
+      queries: anyOf(grab(/\*\*Search queries:\*\*\s*(.+)/) || ''),
+      keywords: new RegExp(anyOf(grab(/\*\*Match keywords:\*\*\s*(.+)/) || id).join('|'), 'i'),
+      // Comparable-set filter for median.js — scrape.js keeps these rows (the
+      // log stays a wide net); they are only excluded from median computation.
+      excludes: excludes.length ? new RegExp(excludes.join('|'), 'i') : null,
+      // "name: kw1 | kw2; name2: *" — first tier whose regex matches the title
+      // wins; "*" is the catch-all. No Tiers line means one undivided pool.
+      tiers: anyOf(grab(/\*\*Tiers:\*\*\s*(.+)/) || '').map(part => {
+        const [name, pattern] = part.split(':').map(s => s.trim());
+        return { name, re: pattern === '*' ? /(?:)/ : new RegExp(pattern, 'i') };
+      }),
     };
   }).filter(it => it.active && !it.id.startsWith('How '));
 }
@@ -132,7 +142,9 @@ async function fetchListings(browser, url) {
 
 // --- main -------------------------------------------------------------------
 
-(async () => {
+module.exports = { parseWatchlist };
+
+if (require.main === module) (async () => {
   const items = parseWatchlist(fs.readFileSync(`${__dirname}/watchlist.md`, 'utf8'));
   if (!items.length) { console.error('No active watchlist items parsed — check watchlist.md format.'); process.exit(1); }
 
