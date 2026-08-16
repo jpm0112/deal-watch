@@ -43,6 +43,10 @@ list, or the request dies with `403 host_not_allowed`.
 | Acer Store | store.acer.com | 21 | Verified 2026-08-04. Nitro PG1 portable line direct. Fixed page (baked search URL). |
 | Arzopa | arzopa.com | 19 | Verified 2026-08-04, `/collections/portable-monitors`. Brand watchlist names directly; frequent discounts. |
 | Motorola | motorola.com | 6 | Few prices on the listing page; product pages needed for real numbers. |
+| UPERFECT | uperfect.com | 65 | Verified 2026-08-16 (local IP), `/collections/portable-monitors` — the `/collections/portable-monitor` guess in the old backlog 404s. Fixed page. Specialist brand, frequent discounts. |
+| INNOCN | innocn.com | 20 | Verified 2026-08-16 (local IP), `/collections/refurbished-portable-monitor` — main portable collection holds only 2 products; the manufacturer-refurb one has the stock, and manufacturer-refurb is watchlist-allowed. Fixed page. |
+
+**Added 2026-08-16, action needed:** uperfect.com and innocn.com must be added to the cloud environment's **Allowed domains** list before the next routine run, or both will die with `403 host_not_allowed`.
 
 ## Blocked — do not scrape directly
 
@@ -74,8 +78,6 @@ look undercounts (Target proved this).
 
 | Site | Why it might help | Why it's still here |
 |---|---|---|
-| UPERFECT (uperfect.com) | Portable-monitor specialist, direct discounts | `/collections/portable-monitor` 404'd; find the right collection URL |
-| INNOCN (innocn.com) | Watchlist names it as a candidate brand | Same — collection URL guess 404'd |
 | ViewSonic (viewsonic.com) | VX16 series on the watchlist | Mostly sells via retailers; direct store unverified |
 | Sam's Club (samsclub.com) | Occasional sharp monitor/phone deals | Membership pricing may be gated like Costco |
 | HP (hp.com) | Sells some portable displays | Catalog likely thin for this watchlist |

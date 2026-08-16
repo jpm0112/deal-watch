@@ -65,6 +65,10 @@ const FIXED = {
   motorola:   'https://www.motorola.com/us/smartphones-all/c/all-smartphones',
   mintmobile: 'https://www.mintmobile.com/devices/',
   arzopa:     'https://www.arzopa.com/collections/portable-monitors',
+  uperfect:   'https://www.uperfect.com/collections/portable-monitors',
+  // main collection has only 2 products; the manufacturer-refurb one has the
+  // stock, and manufacturer-refurbished is watchlist-allowed
+  innocn:     'https://www.innocn.com/collections/refurbished-portable-monitor',
   // search URL baked in: monitor-only vendor, keeps phone queries off it
   acerstore:  'https://store.acer.com/en-us/catalogsearch/result/?q=portable+monitor',
   visible:    'https://www.visible.com/shop/smartphones',
