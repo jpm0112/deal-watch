@@ -4,7 +4,7 @@
   "description": "Weekly Claude Code cloud routine that scans watchlist products across verified sources and records verified deals in DEALS.md.",
   "main": "probe.js",
   "scripts": {
-    "test": "node baseline.js --selftest"
+    "test": "node baseline.js --selftest && node verify.js --selftest"
   },
   "repository": {
     "type": "git",

@@ -34,7 +34,16 @@ function readObservations(text) {
   return { rows, skipped };
 }
 
-/** Group observations by listing URL, keeping the lowest price per day. */
+/**
+ * Group observations by listing URL, keeping one price per day.
+ *
+ * That price is the day's LOW among scraped rows — but a verified row (written
+ * by verify.js after reading the product page itself) outranks every scraped row
+ * for its day, whether it is higher or lower. A scraped price is a guess from a
+ * search card and can be contaminated by a sponsored widget or a bundle; a
+ * verified price is what the page charges. Taking the low across both would let
+ * the guess we already disproved outrank the number we confirmed.
+ */
 function indexByListing(rows) {
   const byUrl = new Map();
   for (const row of rows) {
@@ -45,15 +54,21 @@ function indexByListing(rows) {
     }
     if (row.title) entry.title = row.title;
     const day = row.ts.slice(0, 10);
-    const low = entry.days.get(day);
-    if (low === undefined || row.price < low) entry.days.set(day, row.price);
+    const kept = entry.days.get(day);
+    const verified = row.verified === true;
+    const wins = kept === undefined
+      || (verified && !kept.verified)                            // page beats card
+      || (verified === kept.verified && row.price < kept.price); // else the low
+    if (wins) entry.days.set(day, { price: row.price, verified });
   }
   return byUrl;
 }
 
 /** Movement summary for one listing: has the price it charges ever changed? */
 function summarize(entry) {
-  const days = [...entry.days.entries()].sort(([a], [b]) => a.localeCompare(b));
+  const days = [...entry.days.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([day, kept]) => [day, kept.price]);
   const lows = days.map(([, price]) => price);
   const current = lows[lows.length - 1];
   const prior = lows.slice(0, -1);
@@ -137,6 +152,14 @@ function selftest() {
     '{"ts":"2026-08-03T00:00:00Z","item":"m","url":"u/new","title":"First sighting","price":42}',
     '{"ts":"2026-08-01T00:00:00Z","item":"m","url":"u/up","title":"Went up","price":50}',
     '{"ts":"2026-08-03T00:00:00Z","item":"m","url":"u/up","title":"Went up","price":60}',
+    // verified rows: the scraper reads a contaminated card (a sponsored product,
+    // a bundle) while verify.js reads the product page. Day 1's real price is
+    // ABOVE both scraped numbers, so a plain daily low would discard it.
+    '{"ts":"2026-08-01T00:00:00Z","item":"m","url":"u/ver","title":"Verified","price":180}',
+    '{"ts":"2026-08-01T00:00:00Z","item":"m","url":"u/ver","title":"Verified","price":400}',
+    '{"ts":"2026-08-01T00:00:00Z","item":"m","url":"u/ver","title":"Verified","price":199.99,"verified":true}',
+    '{"ts":"2026-08-02T00:00:00Z","item":"m","url":"u/ver","title":"Verified","price":180}',
+    '{"ts":"2026-08-02T00:00:00Z","item":"m","url":"u/ver","title":"Verified","price":149.99,"verified":true}',
     // an error row carries no price, and a truncated line must not kill the run
     '{"ts":"2026-08-01T00:00:00Z","item":"m","url":"u/err","error":"HTTP 403"}',
     '{"ts":"2026-08-01T00:00:0',
@@ -144,7 +167,7 @@ function selftest() {
 
   const { rows, skipped } = readObservations(log);
   assert.equal(skipped, 1, 'truncated line counted, not thrown');
-  assert.equal(rows.length, 10, 'error rows are not observations');
+  assert.equal(rows.length, 15, 'error rows are not observations');
 
   const byUrl = indexByListing(rows);
   const at = url => summarize(byUrl.get(url));
@@ -165,6 +188,12 @@ function selftest() {
 
   assert.ok(at('u/up').drop < 0, 'a price rise is a negative drop');
   assert.equal(verdict(at('u/up')), 'MOVED');
+
+  const ver = at('u/ver');
+  assert.deepEqual(ver.days, [['2026-08-01', 199.99], ['2026-08-02', 149.99]],
+    'the verified price owns its day, even when it is the highest number seen');
+  assert.equal(ver.priorLow, 199.99, 'baseline is the verified price, not the scraped one');
+  assert.equal(verdict(ver), 'DROP', 'a real drop the scraped rows alone would have hidden');
 
   console.log('selftest OK');
 }

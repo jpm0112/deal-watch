@@ -13,6 +13,7 @@ good turns up.
 | `sources.md` | Where to look, and how each site behaves when scraped. |
 | `scrape.js` | Collects observations. Mechanical: gathers, never judges. |
 | `probe.js` | One-off source viability tester. Re-run when a site goes quiet. |
+| `verify.js` | Records a price read off a product page. The only hand-append path. |
 | `prices.jsonl` | Append-only observation log. Never edited, never pruned. |
 | `baseline.js` | Each listing's own price history. Has this price ever actually moved? |
 | `DEALS.md` | Human-readable verified findings, newest first. |
@@ -27,6 +28,8 @@ good turns up.
 3. Every candidate is **verified on its own product page** before it counts:
    real price, must-have specs, seller, condition, stock. The scraper's wide
    net catches discount badges and accessories; verification throws them back.
+   Every verified price goes back into the log via `node verify.js` — including
+   the ones that get discarded.
 4. Verified hits are prepended to `DEALS.md`; near-misses (close to a bar
    but under it) get one unverified row each in `CANDIDATES.md`.
 5. Commit and push.
@@ -49,6 +52,14 @@ at read time, not stored. That way a bad run can't corrupt the baseline.
 
 Failures are logged too, with `"error"` instead of `"price"`. This matters:
 a site that blocked the scraper must never be recorded as "no deals found."
+
+Rows written by `verify.js` carry `"verified":true`. For a given listing and
+day, a verified row **outranks every scraped row** — higher or lower — because
+it was read off the product page rather than guessed from a search card. Before
+this existed the verified price lived only in `DEALS.md`, so `baseline.js` kept
+scoring listings on numbers the routine had already disproved: the ViewSonic
+VX1654 reads `FLAT` at $169.99 across nine runs while `DEALS.md` records the
+$149.99 promo that was actually on the page.
 
 ## Alert rule
 
