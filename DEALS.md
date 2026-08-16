@@ -41,6 +41,74 @@ Shipping, tax, rebate conditions, return window, expiry of the sale.
 
 -->
 
+## 2026-08-15 — Arzopa Z1FC Gray 16.1" 144Hz Portable Monitor with Sleeve Bag
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $129.99 USD |
+| **Was** | $109.99 — this listing's own prior daily low (`node baseline.js arzopa-z1fc-gray`) |
+| **History** | $109.99 on 2026-08-05 → $109.99 on 2026-08-06 → $129.98 on 2026-08-07 → $129.98 on 2026-08-10 → $109.99 on 2026-08-11 → $129.99 on 2026-08-15 (verdict: MOVED) |
+| **Drop** | 28.2% below this run's clean cross-sectional median ($180.99, n=32 comparable 16"–18" listings) |
+| **Why it hit** | 20%+ below comparables (cross-sectional only — today's price is a rise off this listing's own $109.99 low, not a fresh drop) |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("In Stock — Estimated delivery in 2-4 business days") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/arzopa-z1fc-gray-144hz-portable-gaming-monitor-16-1-screen |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: Mini HDMI (2.0) confirmed in the Interface spec row
+- USB-C video input: confirmed, dual USB 3.1 Type-C, PD power + DP output
+- Stand/cover: built-in stand, plus a bundled sleeve bag (box contents list it explicitly)
+- Refresh rate: 144Hz — gaming-tier feature at a budget price
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not stated
+
+**Notes**
+
+Distinct SKU/URL from the already-logged "Arzopa Z1FC 16.1" 144Hz IPS Laptop Portable Monitor" (2026-08-11 entry, same $129.99 price) — this one bundles a protective sleeve bag and is a different product page; not a duplicate. This is the first `portable-monitor` hit logged since the movement gate (README) took effect that genuinely clears it: baseline.js shows real historical price fluctuation ($109.99 ↔ $129.99) rather than the static was/now flash-sale display several sibling Arzopa SKUs show this run (Z1C, A1M, Z1RC, and the other Z1FC URL are all FLAT and were not re-logged).
+
+---
+
+## 2026-08-15 — Arzopa Z3FC 16.1" 2.5K 180Hz Portable Gaming Monitor FreeSync
+
+| | |
+|---|---|
+| **Item** | `portable-monitor` |
+| **Price** | $139.99 USD |
+| **Was** | $145.99 — this listing's own prior daily low (`node baseline.js arzopa-z3fc`) |
+| **History** | $145.99 on 2026-08-05 → $145.99 on 2026-08-06 → $145.99 on 2026-08-07 → $145.99 on 2026-08-10 → $145.99 on 2026-08-11 → $139.99 on 2026-08-15 (verdict: MOVED, 4.1% below prior low — under the 15% longitudinal bar) |
+| **Drop** | 22.7% below this run's clean cross-sectional median ($180.99, n=32 comparable 16"–18" listings) |
+| **Why it hit** | 20%+ below comparables (cross-sectional); also clears the movement gate on a genuine (if modest) price decrease |
+| **Retailer** | Arzopa (arzopa.com, direct) |
+| **Seller** | Arzopa (first-party) |
+| **Condition** | new |
+| **Stock** | in stock ("In Stock - Estimated delivery in 2-4 business days") |
+| **Link** | https://www.arzopa.com/collections/portable-monitors/products/arzopa-z3fc-16-1-180hz-2560x1440-qhd-portable-gaming-monitor |
+
+**Specs matched**
+
+- Panel size: 16.1" — meets the 16"–18" must-have
+- HDMI input: confirmed ("HDMI supports up to 144Hz")
+- USB-C video input: confirmed ("DP supports up to 180Hz")
+- Stand/cover: built-in stand, plus a bundled protective case
+- Resolution/refresh: 2.5K QHD @ 180Hz — Arzopa's gaming-tier panel, priced below this run's mostly-1080p median
+
+**Spec gaps / unconfirmed**
+
+- Matte/anti-glare finish not stated
+
+**Notes**
+
+Supersedes the 2026-08-11 entry for this same listing ($145.99 then, $139.99 now) — genuinely lower, not a re-log. Unlike that earlier entry (logged before the movement gate existed, explicitly caveated as "not an independent baseline"), this price actually moved on baseline.js's own-history check, so it clears the current, stricter movement-gated rule on its merits rather than needing the caveat.
+
+---
+
 ## 2026-08-11 — Arzopa A1M 17.3" Large 1080p Portable Monitor
 
 | | |
