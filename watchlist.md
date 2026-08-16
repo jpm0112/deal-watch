@@ -227,8 +227,8 @@ devices in the same tier
 
 **Nice to have**
 
-- AirPlay 2 support — wanted, but not at the cost of taking a Roku or a
-  Fire TV, both of which are out (see Notes)
+- AirPlay 2 support — wanted, but unobtainable in this pool (see Notes);
+  don't hold out for it
 - Powered from a 5 V USB port rather than a wall-only supply — one fewer
   outlet on the road
 - 4K, though the portable monitor is 1080p — only worth it at stick prices
@@ -250,6 +250,27 @@ devices in the same tier
 No Roku and no Amazon Fire TV — excluded by preference, not by spec, so
 don't reintroduce them because a price looks good. That leaves the Google
 TV family and Apple TV.
+
+**AirPlay, settled 2026-08-16 — don't re-research this.** No Google TV or
+Android TV device has native AirPlay 2: not the Google TV Streamer, not the
+Onn boxes, not NVIDIA SHIELD (SHIELD got the Apple TV *app* in 2021, which
+is not an AirPlay receiver; the 2019 AirPlay 2 rollout went to LG/Sony/Vizio
+televisions). With Roku and Fire TV out, native AirPlay means Apple TV 4K
+and nothing else. The only other route is a receiver app like AirScreen on
+Google TV — screen mirroring, not per-app AirPlay, ads on the free tier, and
+no independent 2025–2026 test of it on the Streamer 4K that I could find.
+
+Apple TV 4K got more expensive, not less: Apple raised US list on
+2026-06-25, 64 GB $129 → $199 and 128 GB $149 → $249, blamed on DRAM supply.
+Apple Certified Refurbished 64 GB is ~$169. So the AirPlay tier is now a
+$170+ proposition, and the box needs a wall outlet (figure-8 cord, no USB
+power), which is the worst travel fit in the pool.
+
+Buy-point reference, verified on the product pages 2026-08-16: Google TV
+Streamer 4K is $99.99 at both Best Buy and Target — that's list, not a deal.
+Best Buy open-box ran $88.99–$124.99. It reportedly hit $76.99 at Best Buy
+earlier this year, so treat high-$70s as the real buy point and anything at
+$99.99 as no discount at all.
 
 Compare within tiers, never across: sticks list at $20–$50 and boxes at
 $99–$150, so a box at its normal price looks like a "deal" against a stick
