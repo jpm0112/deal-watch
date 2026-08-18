@@ -15,6 +15,7 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-08-18 | `hotspot-phone` | Refurbished Samsung Galaxy S23+ 256GB S916U Unlocked Smartphone - Excellent | $329.99 | target | 13.5% below this run's clean median (need 20%); movement=NEW, one day of history, unverified breadcrumb | https://www.target.com/p/samsung-galaxy-s23-256gb-s916u-unlocked-smartphone-manufacturer-refurbished/-/A-90920428 |
 | 2026-08-11 | `hotspot-phone` | 128GB Motorola Moto G Power 5G Unlocked Smartphone (2025) | $200.00 | slickdeals | 14.0% below this run's clean median (need 20%); confirmed-expired sibling posts of this exact repost cluster the last 4 runs | https://slickdeals.net/f/19699113-128gb-motorola-moto-g-power-5g-unlocked-smartphone-2025-200-free-s-h |
 | 2026-08-11 | `playstation-5` | Sony PlayStation 5 Slim Console: 825GB Digital $374 (digital tier) | $374.00 | slickdeals | 16.9% below this run's clean digital-tier median (need 20%) | https://slickdeals.net/f/18722797-sony-playstation-5-slim-console-1tb-disc-425-825gb-digital-374-free-shipping |
 | 2026-08-11 | `playstation-5` | Active Veterans/Military: 1TB PS5 Slim Disc Edition Console (disc tier) | $380.00 | slickdeals | 19.1% below this run's clean disc-tier median (need 20%) | https://slickdeals.net/f/18811144-sony-playstation-5-slim-disc-edition-console-1tb-military-cgx-379-99-free-shipping |
