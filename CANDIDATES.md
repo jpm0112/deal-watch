@@ -15,6 +15,8 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-08-19 | `hotspot-phone` | Apple iPhone 13 mini (pre-owned), Visible | $266.00 | visible | 18.2% below this run's clean median (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/iphone-13-mini-pre-owned |
+| 2026-08-19 | `hotspot-phone` | Motorola moto g - 2026, full price at Visible | $279.99 | visible | 13.8% below this run's clean median (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-2026 |
 | 2026-08-11 | `hotspot-phone` | 128GB Motorola Moto G Power 5G Unlocked Smartphone (2025) | $200.00 | slickdeals | 14.0% below this run's clean median (need 20%); confirmed-expired sibling posts of this exact repost cluster the last 4 runs | https://slickdeals.net/f/19699113-128gb-motorola-moto-g-power-5g-unlocked-smartphone-2025-200-free-s-h |
 | 2026-08-11 | `playstation-5` | Sony PlayStation 5 Slim Console: 825GB Digital $374 (digital tier) | $374.00 | slickdeals | 16.9% below this run's clean digital-tier median (need 20%) | https://slickdeals.net/f/18722797-sony-playstation-5-slim-console-1tb-disc-425-825gb-digital-374-free-shipping |
 | 2026-08-11 | `playstation-5` | Active Veterans/Military: 1TB PS5 Slim Disc Edition Console (disc tier) | $380.00 | slickdeals | 19.1% below this run's clean disc-tier median (need 20%) | https://slickdeals.net/f/18811144-sony-playstation-5-slim-disc-edition-console-1tb-military-cgx-379-99-free-shipping |
