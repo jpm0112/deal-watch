@@ -240,3 +240,67 @@ budget for one rather than treating it as a dealbreaker.
 
 **Condition:** new or open-box, including Best Buy open-box and
 manufacturer-refurbished. No third-party used listings.
+
+---
+
+## airpods
+
+**Category:** Apple AirPods Pro 3 — narrowed from the whole AirPods line on
+2026-08-25. AirPods 4 and Max are out; the decision is made, this item now
+tracks one product and only wants a better price on it.
+**Price cap:** $280 — relevance filter, not a goal. List is $249.99.
+**Min price:** $120 — a Pro 3 below this is a counterfeit, a single bud, or a
+case. Raised from $50 when the item narrowed from the full AirPods line.
+**Search queries:** airpods pro 3
+**Match keywords:** airpods pro 3
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+listings in the same condition tier
+**Status:** active
+**Exclude keywords:** airpods 4; airpods pro 2; airpods max; max; bundle; 8 in 1; with accessories; earpiece; case .{0,15}for airpods; ear tips; eartips; ear cushions; case only; replacement case; silicone case; hard case; cover; skin; keychain; lanyard; strap; holder; pouch; sleeve; clip; hook; stand; cradle; dock; wireless charger; charging station; juice pack; battery pack; belkin; mophie; cleaning; cleaner; adapter; cable; applecare; apple care; gift card; beats; galaxy buds; pixel buds
+**Tiers:** refurb: refurbished | refurb | open.box | pre.owned | renewed; new: *
+
+**Must have**
+
+- Genuine Apple AirPods Pro 3, complete pair with its MagSafe charging case
+- Any condition: new, open-box, manufacturer- or retailer-certified
+  refurbished, or third-party used, as long as the condition is stated
+- Seller must state the condition grade. An unlabelled "refurbished" listing
+  from a marketplace seller is not a hit.
+
+**Nice to have**
+
+- First-party seller (Target, Best Buy, Apple) over a marketplace third party
+- Stated warranty or return window on a refurbished unit
+
+**Known prices, verified on-page 2026-08-25**
+
+This is the going rate to beat, not a target. Every number below was read off
+the product page, not a search card.
+
+| Price | Condition | Seller |
+|---|---|---|
+| $174.99 | Target Certified Refurbished, Grade A | Target, first-party |
+| $183.99 | Refurbished - Excellent | Best Buy, first-party |
+| $199.99 | New, sale (reg $249.99, 20% off) | Target, first-party |
+| $199.99 | Open-Box Excellent | Best Buy, store pickup only |
+| $199.97-204.99 | Refurbished - Excellent | Best Buy **marketplace** third parties |
+| $249-250 | New, full list | Best Buy, Staples, B&H |
+
+So: **beat $174.99 refurbished, or $199.99 new.** Anything at or above list is
+noise. The three marketplace refurb rows near $200 are worse than both
+first-party refurbs and should never be recorded as hits.
+
+**Notes**
+
+Unreachable sources for this item, so a "no results" here proves nothing:
+Apple's own refurb store carries no AirPods at all right now (Pro 3 has never
+entered that program); Back Market lists a Pro 3 (2025) but 403s on both its
+search and product pages; Amazon, eBay, Walmart are blocked per sources.md and
+Costco is behind a membership login. Costco is the one worth checking by hand.
+
+**Timing, as of 2026-08-25.** AirPods Pro 3 shipped September 2025. AirPods
+Pro 4 is unannounced and the reporting conflicts: some analysts say Q4 2026,
+others say it slipped to 2027 with the infrared-camera feature. Apple's
+September event is the next real signal. If a successor lands, Pro 3 stock
+gets cleared harder than the 20-30% seen now — so a run in late September is
+worth more than a run this week.
