@@ -304,3 +304,104 @@ others say it slipped to 2027 with the infrared-camera feature. Apple's
 September event is the next real signal. If a successor lands, Pro 3 stock
 gets cleared harder than the 20-30% seen now — so a run in late September is
 worth more than a run this week.
+
+---
+
+## ups
+
+**Category:** Consumer UPS / battery backup, pure sine wave, ~1000–1500 VA desktop tier
+**Price cap:** $350 — relevance filter, not a goal. Above this is the rack /
+online double-conversion market, which is a different product.
+**Min price:** $90 — below this it's a surge strip, a replacement battery, or
+a 350–600 VA unit too small for the load.
+**Search queries:** pure sine wave ups battery backup; cyberpower pfclcd; apc back-ups pro
+**Match keywords:** battery backup; uninterruptible; back-ups; cyberpower; cp1500pfclcd; cp1000pfclcd; br1000ms; br1500ms2
+**Alert if:** 15%+ below its own median, OR clearly under the going rate for
+units in the same VA/watt tier
+**Status:** active
+**Exclude keywords:** replacement battery; battery cartridge; rbc\d; rb1290; rb1280; surge protector; surge suppressor; power strip; extension cord; pdu; rack mount; rackmount; 1u; 2u; online double conversion; generator; inverter only; solar; car battery; jump starter; power bank; ups shipping; backups of; network card; ap9\d; management card; replacement remote
+**Tiers:** 1500va: 1500va | 1500 va | cp1500 | br1500 | 1500VA; 1000va: *
+
+**Must have**
+
+- **Pure sine wave output** — not simulated/stepped sine. Active-PFC power
+  supplies can shut down or buzz on a stepped-wave unit, which defeats the
+  purpose of buying one.
+- True UPS with battery backup, not a surge protector or a power strip
+- At least 6 battery-backed outlets, separate from the surge-only bank
+- AVR (automatic voltage regulation) that corrects brownouts without
+  switching to battery
+- USB data port that a Linux daemon can talk to (NUT or apcupsd) for
+  automatic shutdown
+- User-replaceable battery
+- New or manufacturer-refurbished — no third-party used. A used UPS is a
+  used *battery*, and the battery is most of the value.
+
+**Nice to have**
+
+- 900 W+ real output — watts, not VA, is the binding number
+- Standard replaceable battery (a pair of 12 V 9 Ah bricks) rather than a
+  proprietary cartridge, so the mid-life battery swap is $40 and not $111
+- LCD showing load, runtime and input voltage
+- 10+ total outlets, with spacing for wall warts
+
+**Known candidates to check — verified reference set, 2026-08-31**
+
+This is the going rate to beat, not a target. Compare within the VA tier.
+
+| Unit | Price | Source | VA / W | Outlets | Battery |
+|---|---|---|---|---|---|
+| CyberPower CP1500PFCLCD | $240 | Amazon | 1500 / 1000 | 12 (6 batt / 6 surge) | RB1290X2, dual |
+| CyberPower CP1000PFCLCD | $180 | B&H | 1000 / 600 | 10 (6 / 4) | RB1290, single |
+| APC BR1000MS | $191 | Amazon | 1000 / 600 | 10 (6 / 4) | proprietary cartridge, $111 |
+| APC BR1500MS2 | $300 | B&H | 1500 / 900 | — (adds USB-C charging) | proprietary cartridge |
+
+- **CP1500PFCLCD, $240 — the benchmark.** Most watts per dollar, most
+  headroom, longest runtime at load. Any hit has to beat this on $/W, not
+  just on sticker price.
+- **CP1000PFCLCD, $180** — the budget-correct pick if $60 matters. ~3 min at
+  full load, ~9–10 min at half.
+- **BR1000MS, $191** — same class as the CP1000 for $11 more. Worth it only
+  for apcupsd, the more mature Linux daemon. Note the proprietary $111
+  cartridge, which erases the difference at the first battery swap.
+- **BR1500MS2, $300** — $60 more than the CP1500 for 100 W *less*. Only if
+  the APC ecosystem is worth a premium.
+
+**Notes**
+
+Compare within VA tiers, never across: a 1500 VA unit at its normal price
+reads as a "deal" against a pool containing 1000 VA units. That's what the
+**Tiers** line is for.
+
+**VA is marketing; watts is the spec.** The two CyberPower units are both
+"PFCLCD" and look like the same product family, but 1500 VA / 1000 W against
+1000 VA / 600 W is a 67% difference in real capacity for a 33% price
+difference. Rank candidates on $/W and treat the VA number in the title as a
+tier label only.
+
+Runtime scales sharply and non-linearly with headroom, so a unit at half load
+lasts several times longer than the same unit near its rating — buying up a
+tier buys minutes, not just watts. Whatever the listing claims for runtime is
+at *its* stated load, which is rarely yours.
+
+Total cost of ownership includes one battery swap at roughly year 3–5. A
+proprietary APC cartridge is ~$111; the CyberPower units take a pair of
+standard 12 V 9 Ah bricks for well under half that. A $10 sticker saving on
+an APC unit is a real loss over the unit's life.
+
+Watch for the usual noise in this category: replacement batteries and
+cartridges list near unit prices and will pollute the median, as will surge
+protectors and PDUs — all excluded above. "UPS" as a bare term also collides
+with the shipping carrier, which is why **Match keywords** uses "battery
+backup" / "uninterruptible" / model numbers rather than the acronym.
+
+**Source reachability, checked against sources.md 2026-08-31.** Two of the
+four reference prices above came from sources the scraper cannot read: Amazon
+is blocked (HTTP 503, and Camelcamelcamel and eBay are blocked too, so there
+is no back door since Slickdeals was dropped), and B&H intermittently
+Cloudflare-challenges. So a "no results" for this item proves nothing about
+Amazon or B&H pricing, and the $240 and $180 benchmarks above will mostly not
+be re-verified automatically — check those two by hand before concluding a
+scraped listing beats them. The reachable sources that actually stock this
+category are Newegg (best yield overall), Office Depot, Staples, Target and
+Micro Center; Monoprice, Woot and the monitor-brand stores are irrelevant here.
