@@ -15,6 +15,8 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-09-01 | `hotspot-phone` | Motorola moto g power - 2026, full price at Visible | $299.99 | visible | 19.8% below this run's clean median $374.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-power-2026 |
+| 2026-09-01 | `ups` | CyberPower CP1500PFCLCD UPS 1500VA 1000W PFC Pure Sine Wave (1500va tier) | $239.95 | officedepot | 12.7% below this run's clean 1500va-tier median $274.95 (need 20%); FLAT | https://www.officedepot.com/a/products/204189/CyberPower-CP1500PFCLCD-UPS-1500VA-1000W-PFC/ |
 | 2026-08-31 | `ups` | CyberPower Ecologic EC650LCD 8 Outlet UPS | $96.95 | officedepot | 44.1% below this run's clean median $173.45 (clears the 20% bar) but NEW — first day of history, no drop provable yet | https://www.officedepot.com/a/products/868683/CyberPower-Ecologic-EC650LCD-8-Outlet-Uniterruptible/ |
 | 2026-08-31 | `ups` | APC Back-UPS BVN650M1 Battery Backup | $98.99 | officedepot | 42.9% below this run's clean median $173.45 (clears the 20% bar) but NEW — first day of history, no drop provable yet | https://www.officedepot.com/a/products/8007060/APC-Back-UPS-BVN650M1-Battery-Backup/ |
 | 2026-08-31 | `ups` | CyberPower SL750U Battery Backup UPS Systems | $99.99 | target | 42.4% below this run's clean median $173.45 (clears the 20% bar) but NEW — first day of history, no drop provable yet | https://www.target.com/p/cyberpower-sl750u-battery-backup-ups-systems/-/A-94088729 |
