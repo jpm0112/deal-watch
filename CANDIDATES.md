@@ -15,6 +15,8 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-09-03 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 15.8% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
+| 2026-09-03 | `hotspot-phone` | Motorola moto g power - 2026, full price at Visible | $299.99 | visible | 15.5% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-power-2026 |
 | 2026-09-02 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 15.8% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
 | 2026-09-02 | `hotspot-phone` | Motorola moto g power - 2026, full price at Visible | $299.99 | visible | 15.5% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-power-2026 |
 | 2026-09-01 | `hotspot-phone` | Motorola moto g power - 2026, full price at Visible | $299.99 | visible | 19.8% below this run's clean median $374.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-power-2026 |
