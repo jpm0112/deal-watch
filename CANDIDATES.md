@@ -15,6 +15,9 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-09-04 | `hotspot-phone` | Apple iPhone 13 mini (pre-owned), Visible | $266.00 | visible | 18.8% below this run's clean median $327.50 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/iphone-13-mini-pre-owned |
+| 2026-09-04 | `hotspot-phone` | Motorola moto g - 2026, full price at Visible | $279.99 | visible | 14.5% below this run's clean median $327.50 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-2026 |
+| 2026-09-04 | `ups` | CyberPower Intelligent LCD CP1500AVRLCD3 1500VA UPS (1500va tier) | $217.99 | officedepot | 12.3% below this run's clean 1500va-tier median $248.47 (need 20%); FLAT | https://www.officedepot.com/a/products/6812835/CyberPower-Intelligent-LCD-UPS-CP1500AVRLCD3-1500VA/ |
 | 2026-09-03 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 15.8% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
 | 2026-09-03 | `hotspot-phone` | Motorola moto g power - 2026, full price at Visible | $299.99 | visible | 15.5% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-power-2026 |
 | 2026-09-02 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 15.8% below this run's clean median $355.00 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
