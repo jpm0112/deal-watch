@@ -15,6 +15,8 @@ via the normal verification path.
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
+| 2026-09-11 | `hotspot-phone` | Apple iPhone 13 mini (pre-owned), Visible | $266.00 | visible | 18.2% below this run's clean median $324.99 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/iphone-13-mini-pre-owned |
+| 2026-09-11 | `hotspot-phone` | Motorola moto g - 2026, full price at Visible | $279.99 | visible | 13.8% below this run's clean median $324.99 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-2026 |
 | 2026-09-10 | `hotspot-phone` | Apple iPhone 13 mini (pre-owned), Visible | $266.00 | visible | 18.2% below this run's clean median $324.99 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/iphone-13-mini-pre-owned |
 | 2026-09-10 | `hotspot-phone` | Motorola moto g - 2026, full price at Visible | $279.99 | visible | 13.8% below this run's clean median $324.99 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-2026 |
 | 2026-09-09 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 18.0% below this run's clean median $364.50 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
