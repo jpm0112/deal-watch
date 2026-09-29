@@ -12,6 +12,11 @@ via the normal verification path.
 
 | Date | Item | Title | Price | Source | Gap | Link |
 |---|---|---|---|---|---|---|
+| 2026-09-29 | `ups` | CyberPower CP900AVR AVR UPS Systems, 900VA/560W (1000va tier) | $159.95 | officedepot | 21.5% below this run's clean 1000va-tier median $203.69 (clears the 20% bar) but FLAT | https://www.officedepot.com/a/products/639234/CyberPower-CP900AVR-AVR-UPS-Systems-900VA560W/ |
+| 2026-09-29 | `ups` | CyberPower® CP850AVRLCD Uninterruptible Power Supply, 9 Outlets, 850VA (1000va tier) | $164.95 | officedepot | 19.0% below this run's clean 1000va-tier median $203.69 (need 20%); FLAT | https://www.officedepot.com/a/products/953855/CyberPower-CP850AVRLCD-Uninterruptible-Power-Supply-9/ |
+| 2026-09-29 | `ups` | CyberPower® 10-Outlet Uninterruptible Power Supply, 850VA/510 Watts (1000va tier) | $169.95 | officedepot | 16.6% below this run's clean 1000va-tier median $203.69 (need 20%); FLAT | https://www.officedepot.com/a/products/905233/CyberPower-10-Outlet-Uninterruptible-Power-Supply/ |
+| 2026-09-29 | `ups` | CyberPower BRG1000AVRLCD Intelligent LCD UPS Systems, 1000VA/600W (1000va tier) | $170.95 | officedepot | 16.1% below this run's clean 1000va-tier median $203.69 (need 20%); FLAT | https://www.officedepot.com/a/products/851466/CyberPower-BRG1000AVRLCD-Intelligent-LCD-UPS-Systems/ |
+| 2026-09-29 | `hotspot-phone` | Samsung Galaxy A26 5G, full price at Visible | $299.00 | visible | 15.2% below this run's clean median $352.50 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a26-5g |
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
