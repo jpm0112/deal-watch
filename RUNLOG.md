@@ -310,3 +310,4 @@ all, which is different from a week with no deals.
   CANDIDATES.md: 5 new rows (max per run) — ups CP900AVR/officedepot (21.5%, clears the 20% bar but FLAT), ups CP850AVRLCD/officedepot (19.0%), ups CyberPower 10-outlet/officedepot (16.6%), ups BRG1000AVRLCD/officedepot (16.1%), hotspot-phone Samsung Galaxy A26 5G/Visible (15.2%) — all recurring breadcrumbs from prior weeks, medians shifted slightly with this run's data.
 
   iphone-14-pro, playstation-5, airpods: zero observations this run — every source that carries these items (bestbuy, staples, samsung, backmarket, adorama) errored out, and no fixed-page source covers them. No conclusions possible; not "no deals," per sources.md's rule on silent failure.
+- 2026-09-29T15:10:33Z — run started
