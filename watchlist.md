@@ -43,7 +43,7 @@ aren't what I'm shopping for. Never search toward the cap, and never treat
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 phones meeting the same must-haves
 **Status:** active
-**Exclude keywords:** cordless; dect; landline; corded; vtech; conference phone; speakerphone; smartwatch; moto watch; watch band; tablet; ipad; phone case; screen protector; charger; charging; cradle; boostcharge; headphones; headphone; phone drive; usb drive; flash drive; ssd; galaxy s8; galaxy s9; galaxy s10; galaxy buds; earbuds; pre-owned; prepaid; boost mobile; total by verizon; straight talk; tracfone
+**Exclude keywords:** cordless; dect; landline; corded; vtech; conference phone; speakerphone; smartwatch; moto watch; watch band; tablet; ipad; phone case; screen protector; charger; charging; cradle; boostcharge; headphones; headphone; phone drive; usb drive; flash drive; ssd; galaxy s8; galaxy s9; galaxy s10; galaxy buds; earbuds; pre-owned; prepaid; boost mobile; total by verizon; straight talk; tracfone; elation
 
 **Must have**
 
@@ -166,7 +166,7 @@ candidates entirely.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 devices in the same tier
 **Status:** active
-**Exclude keywords:** roku; fire tv; firestick; fire stick; onn\.; onn 4k; shield; remote control; replacement remote; voice remote; case; cover; mount; wall mount; hdmi cable; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card; android tv box; kp1
+**Exclude keywords:** roku; fire tv; firestick; fire stick; onn\.; onn 4k; shield; remote control; replacement remote; voice remote; siri remote; case; cover; mount; wall mount; hdmi cable; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card; android tv box; kp1; used
 **Tiers:** apple: apple tv; google: *
 
 **Must have**
