@@ -166,7 +166,7 @@ candidates entirely.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 devices in the same tier
 **Status:** active
-**Exclude keywords:** roku; fire tv; firestick; fire stick; onn\.; onn 4k; shield; remote control; replacement remote; voice remote; siri remote; case; cover; mount; wall mount; hdmi cable; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card; android tv box; kp1; used
+**Exclude keywords:** roku; fire tv; firestick; fire stick; onn\.; onn 4k; shield; remote control; replacement remote; voice remote; siri remote; case; cover; mount; wall mount; hdmi cable; hdmi switch; switcher; splitter; ethernet adapter; power adapter; usb cable; soundbar; projector; class; led tv; qled; smart tv; 32 inch; 43 inch; 50 inch; 55 inch; 65 inch; 75 inch; apple tv\+; subscription; gift card; android tv box; kp1; used
 **Tiers:** apple: apple tv; google: *
 
 **Must have**
