@@ -30,7 +30,6 @@ list, or the request dies with `403 host_not_allowed`.
 | Lenovo | lenovo.com | 55 | ThinkVision M-series, discounted hard and often. |
 | B&H Photo | bhphotovideo.com | 53 | Payboo/instant-rebate prices differ from list. |
 | Woot | woot.com | 51 | Amazon-owned closeouts. High variance, occasionally excellent. |
-| Best Buy | bestbuy.com | 45 | Prices at `[data-testid="price-block-customer-price"]`. Open-box worth checking. |
 | Mint Mobile | mintmobile.com | 43 | Cheap unlocked stock — verify no carrier lock before trusting. |
 | ASUS | asus.com | 41 | ZenScreen line direct. |
 | Micro Center | microcenter.com | 28 | Prices are per-store; needs a store set or results mislead. |
@@ -58,6 +57,7 @@ list, or the request dies with `403 host_not_allowed`.
 | Dell | dell.com | HTTP 403 | "Access Denied" — aggressive filtering. |
 | Walmart | walmart.com | extractor crash | Tested 2026-08-04: page DOM crashed the generic extractor mid-walk. Known hostile; parked. |
 | Costco | costco.com | not tested | Membership pricing behind login. Low priority. |
+| Best Buy | bestbuy.com | `net::ERR_HTTP2_PROTOCOL_ERROR` | **Moved here 2026-10-14** per step 7d of routine-prompt.md: errored this exact way on every query, every run, for 10+ consecutive weeks (2026-09-10, -11, -18, -21, -24, -25, -28, -30, 10-01, 10-12, 10-14); the one earlier week it didn't error it returned only the price-filter facet sidebar, never a real listing (see the 2026-08-11 note below) — zero real prices across its entire recorded history. Removed from scrape.js's SEARCH map the same run. Re-add only if a probe.js run shows real product cards. |
 
 ## Thin or unresolved — need work before use
 

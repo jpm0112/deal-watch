@@ -48,7 +48,11 @@ function parseWatchlist(md) {
 
 const enc = q => encodeURIComponent(q);
 const SEARCH = {
-  bestbuy:     q => `https://www.bestbuy.com/site/searchpage.jsp?st=${enc(q)}`,
+  // bestbuy removed 2026-10-14 — net::ERR_HTTP2_PROTOCOL_ERROR on every query,
+  // every run, for 10+ consecutive weeks (2026-09-10 through 2026-10-12); the
+  // one earlier non-error week just produced the price-filter facet sidebar,
+  // never a real listing. Zero real prices across its entire history. See
+  // sources.md's Blocked table.
   bhphoto:     q => `https://www.bhphotovideo.com/c/search?q=${enc(q)}`,
   newegg:      q => `https://www.newegg.com/p/pl?d=${enc(q)}`,
   microcenter: q => `https://www.microcenter.com/search/search_results.aspx?Ntt=${enc(q)}`,
