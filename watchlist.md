@@ -319,7 +319,7 @@ a 350–600 VA unit too small for the load.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 units in the same VA/watt tier
 **Status:** active
-**Exclude keywords:** replacement battery; battery cartridge; rbc\d; rb1290; rb1280; surge protector; surge suppressor; power strip; extension cord; pdu; rack mount; rackmount; 1u; 2u; online double conversion; generator; inverter only; solar; car battery; jump starter; power bank; ups shipping; backups of; network card; ap9\d; management card; replacement remote
+**Exclude keywords:** replacement battery; battery cartridge; rbc\d; rb1290; rb1280; surge protector; surge suppressor; power strip; extension cord; pdu; rack mount; rackmount; 1u; 2u; online double conversion; generator; inverter only; solar; car battery; jump starter; power bank; ups shipping; backups of; network card; ap9\d; management card; replacement remote; ecologic
 **Tiers:** 1500va: 1500va | 1500 va | cp1500 | br1500 | 1500VA; 1000va: *
 
 **Must have**
