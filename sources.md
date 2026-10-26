@@ -30,7 +30,6 @@ list, or the request dies with `403 host_not_allowed`.
 | Lenovo | lenovo.com | 55 | ThinkVision M-series, discounted hard and often. |
 | B&H Photo | bhphotovideo.com | 53 | Payboo/instant-rebate prices differ from list. |
 | Woot | woot.com | 51 | Amazon-owned closeouts. High variance, occasionally excellent. |
-| Best Buy | bestbuy.com | 45 | Prices at `[data-testid="price-block-customer-price"]`. Open-box worth checking. |
 | Mint Mobile | mintmobile.com | 43 | Cheap unlocked stock — verify no carrier lock before trusting. |
 | ASUS | asus.com | 41 | ZenScreen line direct. |
 | Micro Center | microcenter.com | 28 | Prices are per-store; needs a store set or results mislead. |
@@ -52,6 +51,7 @@ list, or the request dies with `403 host_not_allowed`.
 
 | Site | Domain | Result | Notes |
 |---|---|---|---|
+| Best Buy | bestbuy.com | 0 prices, HTTP 200 / ERR_HTTP2_PROTOCOL_ERROR | **Moved here 2026-10-26** per the 7d source-health rule: errored or kept 0 every single week from 2026-08-03 through today (connection resets, "0 prices extracted" via its own facet-sidebar text, and recurring `ERR_HTTP2_PROTOCOL_ERROR`), with zero exceptions logged across ~3 months of runs. Never produced a real listing. Not removed from `scrape.js`'s roster, but treat any future "no results" from it as proven dead, not unproven — don't spend time probing it by hand. |
 | Amazon | amazon.com | HTTP 503 | Blocked even from a residential IP. Reach via Slickdeals/Woot. |
 | Camelcamelcamel | camelcamelcamel.com | HTTP 403 | Cloudflare challenge ("Just a moment..."). **Not usable** as an Amazon proxy. |
 | eBay | ebay.com | HTTP 403 | Blocked on the search endpoint. |
