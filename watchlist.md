@@ -123,7 +123,7 @@ median.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 the same model tier
 **Status:** active
-**Exclude keywords:** controller; dualsense; headset; headphone; ssd; heatsink; faceplate; cover plate; skin; charging station; gift card; game drive; media remote; camera
+**Exclude keywords:** controller; dualsense; headset; headphone; ssd; solid state drive; nvme; heatsink; faceplate; cover plate; skin; charging station; gift card; game drive; media remote; camera
 **Tiers:** pro: ps5 pro | playstation 5 pro; digital: digital; disc: *
 
 **Must have**
