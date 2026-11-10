@@ -409,3 +409,4 @@ all, which is different from a week with no deals.
   No product pages needed DEALS.md verification — nothing both cleared a bar and passed the movement gate (MOVED/DROP). 2 new NOISE.md rows added (Pixel 9a `23B-001E-009E1` — third-party reseller + resolves a standing open question; CyberPower EC550G — simulated-sine-wave must-have failure, same durable reason as its Ecologic siblings). No CANDIDATES.md rows this run — every other near-miss was an exact-price repeat of what's already logged there (SL750U, CP685AVRG, BX1500M, Apple TV 4K 64GB, the Office Depot cluster), none representing new information. No watchlist.md/sources.md changes needed.
 
   **0 verified hits, 0 new candidates.** No must-buy, no GitHub issue.
+- 2026-11-10T14:04:15Z — run started
