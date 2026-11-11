@@ -419,3 +419,4 @@ all, which is different from a week with no deals.
   No product pages needed DEALS.md verification — nothing both cleared a bar and passed the movement gate (MOVED/DROP). No NOISE.md additions (no new durable-junk pattern found). 3 CANDIDATES.md rows added, chosen for genuinely new information (two listings seen in the price log for 1-3 weeks but never previously written down, plus one NEW->FLAT status confirmation) rather than re-logging the many exact-price repeats already covered in prior entries. No watchlist.md/sources.md changes needed.
 
   **0 verified hits, 3 new candidates.** No must-buy, no GitHub issue.
+- 2026-11-11T14:01:56Z — run started
