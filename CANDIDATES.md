@@ -12,6 +12,11 @@ via the normal verification path.
 
 | Date | Item | Title | Price | Source | Gap | Link |
 |---|---|---|---|---|---|---|
+| 2026-11-12 | `hotspot-phone` | Full Price of Motorola moto g play - 2026 is $229.99 | $229.99 | visible | 32.4% below this run's clean median $339.99 (clears the 20% bar) but FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-play-2026 |
+| 2026-11-12 | `hotspot-phone` | Full Price of Samsung Galaxy A17 5G is $199 | $199.00 | visible | 41.5% below this run's clean median $339.99 (clears the 20% bar) but FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/samsung-galaxy-a17-5g |
+| 2026-11-12 | `hotspot-phone` | Samsung Galaxy A17 5G Ai (128GB + 4GB) Unlocked (Compatible with T-Mobile) | $269.99 | newegg | 20.6% below this run's clean median $339.99 (clears the 20% bar) but FLAT — unchanged at $269.99 since first logged 2026-11-02 | https://www.newegg.com/p/23B-0002-020U4 |
+| 2026-11-12 | `hotspot-phone` | Full Price of Motorola moto g - 2026 is $279.99 | $279.99 | visible | 17.6% below this run's clean median $339.99 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-2026 |
+| 2026-11-12 | `hotspot-phone` | Full Price of Motorola moto g power - 2026 is $299.99 | $299.99 | visible | 11.8% below this run's clean median $339.99 (need 20%); FLAT (full retail listing price, not a discount) | https://www.visible.com/shop/smartphones/motorola-moto-g-power-2026 |
 <!-- Row template (routine prepends below this line, top 5 per run max):
 | YYYY-MM-DD | `watchlist-id` | <title, truncated> | $XX.XX | bestbuy | 12% below run median (need 20%) | <url> |
 -->
