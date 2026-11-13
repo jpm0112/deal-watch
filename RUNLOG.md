@@ -420,3 +420,14 @@ all, which is different from a week with no deals.
 
   **0 verified hits, 3 new candidates.** No must-buy, no GitHub issue.
 - 2026-11-13T14:01:43Z — run started
+
+- 2026-11-13 run complete. `node scrape.js`: 140 observations, 97 errors appended to prices.jsonl.
+  Worked: newegg (20 kept), officedepot (37), staples (68), visible (13), monoprice (2), bhphoto/woot/lenovo/asus/samsung/arzopa/uperfect/innocn/acerstore (0 kept, ran clean). Errored (all previously-documented flaky sources per sources.md, no new issue): bestbuy (0 prices extracted), microcenter (403 Cloudflare), adorama (403), target (0 prices extracted), backmarket (403 Cloudflare "Just a moment"), motorola (0 prices), mintmobile (0 prices).
+
+  `node median.js` this run: hotspot-phone (n=23 clean, median $378.09) — top HIT-gap row was Samsung Galaxy A17 5G Ai (128GB+4GB, newegg, 23B-0002-020U4) at $267.99, MOVED (not FLAT) with a genuine 29.1% cross-sectional gap, which would otherwise have gone to DEALS.md verification. Opened the product page: it states outright "Not Compatible with eSIM," failing hotspot-phone's eSIM-capable must-have, and is sold by third-party marketplace "Wireless Place" — discarded, added to NOISE.md. Two Cisco desk/IP-phone listings (CP-7861-WMK wallmount bracket, 8811 IP Phone) matched only on the "phone" substring — not phones at all, added to NOISE.md and added "cisco"/"wallmount"/"ip phone" to hotspot-phone's Exclude keywords in watchlist.md so they stop recurring. Remaining hotspot-phone HIT-gap rows (TCL K33, Galaxy A17 5G, moto g play/g/power 2026, all via Visible) are the same FLAT full-retail-price listings re-logged every run for months — not re-added to CANDIDATES.md per the no-redundant-re-logging rule.
+
+  ups/1000va (n=33 clean, median $197.99): three new APC "Back-UPS" (plain, non-Pro) SKUs appeared this run — BE550G, BE700G3, BE900G3. Checked manufacturer datasheets for all three: all confirmed "stepped approximation to a sine wave," same plain Back-UPS family already excluded for this must-have (BVN900M1, BVN650M1, BN1050M, ES 650VA). Added all three to NOISE.md. One new Pro-line SKU, BX850M, found no spec issue (18.2% near-miss, FLAT) — added to CANDIDATES.md as genuinely new information. ups/1500va (n=7, median $239.95): BX1500M $189.99 FLAT, already extensively documented, not re-logged.
+
+  streaming-stick/apple (n=4, median $165.99): Apple TV 4K 32GB/64GB Staples listings clear the 20% bar but are long-confirmed FLAT, already documented 2026-11-02/-05 — not re-logged. iphone-14-pro (n=1), playstation-5 (pro/disc: no observations; digital n=1), airpods (new n=1, refurb: no observations): too thin for a median, no candidates. One new Pixel 9a SKU suffix (23B-001E-00A28, Porcelain) at $339.99, FLAT, 10.1% near-miss — added to CANDIDATES.md as a new-SKU breadcrumb.
+
+  **0 verified hits, 2 new candidates, 6 new NOISE.md entries, 1 watchlist.md exclude-keyword update.** No must-buy, no GitHub issue.
