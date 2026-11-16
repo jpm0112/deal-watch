@@ -30,7 +30,6 @@ list, or the request dies with `403 host_not_allowed`.
 | Lenovo | lenovo.com | 55 | ThinkVision M-series, discounted hard and often. |
 | B&H Photo | bhphotovideo.com | 53 | Payboo/instant-rebate prices differ from list. |
 | Woot | woot.com | 51 | Amazon-owned closeouts. High variance, occasionally excellent. |
-| Best Buy | bestbuy.com | 45 | Prices at `[data-testid="price-block-customer-price"]`. Open-box worth checking. |
 | Mint Mobile | mintmobile.com | 43 | Cheap unlocked stock — verify no carrier lock before trusting. |
 | ASUS | asus.com | 41 | ZenScreen line direct. |
 | Micro Center | microcenter.com | 28 | Prices are per-store; needs a store set or results mislead. |
@@ -52,6 +51,7 @@ list, or the request dies with `403 host_not_allowed`.
 
 | Site | Domain | Result | Notes |
 |---|---|---|---|
+| Best Buy | bestbuy.com | 0 prices extracted | **Marked Blocked 2026-11-16 per sources.md's own 2026-08-02 threshold** ("probe it again; if it errors, mark it Blocked rather than letting it fail weekly"). Every weekly run from 2026-08-03 through 2026-11-16 produced either "0 prices extracted" (HTTP 200) or a connection reset across all 9 watchlist queries — never a real listing. The generic extractor cannot read Best Buy's markup; this is a dead source, not an intermittent one. |
 | Amazon | amazon.com | HTTP 503 | Blocked even from a residential IP. Reach via Slickdeals/Woot. |
 | Camelcamelcamel | camelcamelcamel.com | HTTP 403 | Cloudflare challenge ("Just a moment..."). **Not usable** as an Amazon proxy. |
 | eBay | ebay.com | HTTP 403 | Blocked on the search endpoint. |
@@ -93,14 +93,14 @@ look undercounts (Target proved this).
   serve the rest. Repeated same-site requests in one run trigger it.
 - **Adorama** — loads (HTTP 200) but the generic extractor gets nothing;
   likely shadow-DOM or iframe pricing. Parked.
-- **Best Buy** — effectively dead, not merely thin. Across 2026-08-03..11 it
-  produced 32 "0 prices extracted" errors, a dozen connection resets, and
-  exactly ONE "listing": the price-range filter sidebar ("Unlocked Cell
-  Phones", $100/$150/$200/$250/$500 — facet buckets, all above the $80 min, so
-  the min-price filter never absorbed them as previously assumed). scrape.js
-  now discards any card whose link points back at the search page itself,
-  which removes the facet rows; the 0-prices problem is unfixed. Probe it
-  again; if it errors, mark it Blocked rather than letting it fail weekly.
+- **Best Buy — marked Blocked 2026-11-16.** Effectively dead, not merely thin.
+  Across 2026-08-03 through 2026-11-16 it produced dozens of "0 prices
+  extracted" errors and a handful of connection resets, and never once
+  returned a real listing — only, early on, the price-range filter sidebar
+  facet buckets (now discarded by scrape.js's search-page-link filter). The
+  0-prices problem itself was never fixed across 3+ months of weekly runs, so
+  per this file's own threshold it's now Blocked rather than left to fail
+  silently every week. See the Blocked table above.
 - **Slickdeals — REMOVED 2026-08-15.** It was 43% of all tracked listings and
   produced zero price movement in three weeks: a forum post's price is static
   text, so it can never clear the movement gate in README.md, and every thread

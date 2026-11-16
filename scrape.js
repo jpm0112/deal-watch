@@ -48,7 +48,10 @@ function parseWatchlist(md) {
 
 const enc = q => encodeURIComponent(q);
 const SEARCH = {
-  bestbuy:     q => `https://www.bestbuy.com/site/searchpage.jsp?st=${enc(q)}`,
+  // bestbuy removed 2026-11-16 — marked Blocked in sources.md. Every weekly
+  // run from 2026-08-03 through 2026-11-16 (3.5+ months) returned "0 prices
+  // extracted" or a connection reset across all 9 watchlist queries, never a
+  // real listing. Dead source, not intermittent; see sources.md for detail.
   bhphoto:     q => `https://www.bhphotovideo.com/c/search?q=${enc(q)}`,
   newegg:      q => `https://www.newegg.com/p/pl?d=${enc(q)}`,
   microcenter: q => `https://www.microcenter.com/search/search_results.aspx?Ntt=${enc(q)}`,
