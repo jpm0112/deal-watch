@@ -43,7 +43,7 @@ aren't what I'm shopping for. Never search toward the cap, and never treat
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 phones meeting the same must-haves
 **Status:** active
-**Exclude keywords:** cordless; dect; landline; corded; vtech; conference phone; speakerphone; smartwatch; moto watch; watch band; tablet; ipad; phone case; screen protector; charger; charging; cradle; boostcharge; headphones; headphone; phone drive; usb drive; flash drive; ssd; galaxy s8; galaxy s9; galaxy s10; galaxy buds; earbuds; pre-owned; prepaid; boost mobile; total by verizon; straight talk; tracfone; elation; yealink; voip
+**Exclude keywords:** cordless; dect; landline; corded; vtech; conference phone; speakerphone; smartwatch; moto watch; watch band; tablet; ipad; phone case; screen protector; charger; charging; cradle; boostcharge; headphones; headphone; phone drive; usb drive; flash drive; ssd; galaxy s8; galaxy s9; galaxy s10; galaxy buds; earbuds; pre-owned; prepaid; boost mobile; total by verizon; straight talk; tracfone; elation; yealink; voip; cisco; ip phone; wallmount; wall mount kit
 
 **Must have**
 
@@ -319,7 +319,7 @@ a 350–600 VA unit too small for the load.
 **Alert if:** 15%+ below its own median, OR clearly under the going rate for
 units in the same VA/watt tier
 **Status:** active
-**Exclude keywords:** replacement battery; battery cartridge; rbc\d; rb1290; rb1280; surge protector; surge suppressor; power strip; extension cord; pdu; rack mount; rackmount; 1u; 2u; online double conversion; generator; inverter only; solar; car battery; jump starter; power bank; ups shipping; backups of; network card; ap9\d; management card; replacement remote
+**Exclude keywords:** replacement battery; battery cartridge; rbc\d; rb1290; rb1280; surge protector; surge suppressor; power strip; extension cord; pdu; rack mount; rackmount; 1u; 2u; online double conversion; generator; inverter only; solar; car battery; jump starter; power bank; ups shipping; backups of; network card; ap9\d; management card; replacement remote; external battery pack; dt7042
 **Tiers:** 1500va: 1500va | 1500 va | cp1500 | br1500 | 1500VA; 1000va: *
 
 **Must have**
