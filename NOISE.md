@@ -25,6 +25,7 @@ Rules:
 
 | URL | Reason | Flagged |
 |---|---|---|
+| https://www.staples.com/apc-back-ups-pro-1000-va-battery-backup-8-outlets-black-bx1000m-lm60/product_24414117 | Same BN1050M unit already flagged at the Office Depot URL below — plain APC "Back-UPS" line (not Back-UPS Pro/PFCLCD despite Staples' own title saying "Pro"), stepped/simulated sine wave per APC/Schneider Electric specs. Fails the pure-sine-wave must-have regardless of retailer or price. Confirmed on-page 2026-11-23: $119.99 (27% off $164.99), no "pure sine wave" claim anywhere on the page — a real, verified price, just the wrong spec. | 2026-11-23 |
 | https://www.officedepot.com/a/products/4486121/ViewSonic-VA1653-16-Inch-1080p-FHD/ | Spec table says 15.6" (396.24mm viewable) contradicting the "16 Inch" title — fails the 16" floor. Confirmed 4 runs. | 2026-08-05 |
 | https://www.target.com/p/viewsonic-va1653-16-inch-1080p-fhd-ips-portable-monitor-with-eye-care-built-in-stand-usb-c-mini-hdmi-and-protective-case-external-second-screen/-/A-1003028407 | Same VA1653 panel, same 15.6" contradiction as the Office Depot listing. | 2026-08-05 |
 | https://www.target.com/p/manufacturer-refurbished-viewsonic-va1653-16-fhd-ips-portable-monitor-built-in-stand-cr/-/A-1005994584 | Same VA1653 panel again, refurb SKU. | 2026-08-05 |
