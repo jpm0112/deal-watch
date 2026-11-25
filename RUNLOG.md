@@ -437,3 +437,4 @@ all, which is different from a week with no deals.
   No new NOISE.md rows this run — nothing was opened and confirmed junk on its own page (Newegg stayed Cloudflare-blocked on every attempted verification). No watchlist.md changes. 5 CANDIDATES.md rows prepended (2 ups/1000va NEW, 1 ups/1500va near-miss, 1 ups/1500va near-miss, 1 streaming-stick/apple near-miss), all described above.
 
   **0 verified hits, 5 new candidates.** No must-buy, no GitHub issue.
+- 2026-11-25T14:01:43Z — run started
